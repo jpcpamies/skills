@@ -13,7 +13,6 @@ description: >
 license: MIT
 metadata:
   author: Jordi Pàmies
-  version: "2.0"
   method: CANON (Consistencia · Atomicidad · North Star · Orden · Non-slop)
 ---
 
