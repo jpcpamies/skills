@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "jordipamies-skills",
+  "description": "Marketplace de skills de Jordi Pàmies: IA aplicada, contenido y productividad.",
+  "owner": {
+    "name": "Jordi Pàmies",
+    "email": "jordi@jordipamies.com"
+  },
+  "plugins": [
+    {
+      "name": "jordipamies-skills",
+      "description": "Skills de IA aplicada, contenido y productividad, by Jordi Pàmies.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

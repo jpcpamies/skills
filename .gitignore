@@ -1,0 +1,11 @@
+# Personalizaciones privadas: el perfil real que rellena cada usuario NO se sube
+**/references/perfil.md
+/private/
+
+# Sistema / editores / temporales
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+*.tmp
