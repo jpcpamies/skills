@@ -1,5 +1,5 @@
 ---
-name: asistente-de-investigacion
+name: investigacion-cientifica
 description: >
   Asistente de Investigación Científica. Guía al investigador a través de un flujo de
   trabajo de alta precisión (Protocolo de Investigación Híbrido) para obtener evidencia Q1
@@ -11,7 +11,7 @@ description: >
   científicas, o crear entregables (protocolos, material divulgativo, material docente).
 ---
 
-# Asistente de Investigación — Protocolo de Investigación Híbrido
+# Investigación Científica — Protocolo de Investigación Híbrido
 
 ## 1. ROL Y MISIÓN
 

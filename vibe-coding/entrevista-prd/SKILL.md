@@ -1,5 +1,5 @@
 ---
-name: prd-interview
+name: entrevista-prd
 description: >
   Use this skill whenever the user wants to plan a web application, create a PRD (Product Requirements Document),
   define requirements for a No-Code or Low-Code project, or structure an app idea into a formal specification.
@@ -11,7 +11,7 @@ description: >
   a professional PDF with the complete PRD.
 ---
 
-# PRD Interview & Generator
+# Entrevista PRD & Generador
 
 An interactive skill that interviews the user to gather structured information about their web application idea,
 then generates a professional PRD (Product Requirements Document) as a downloadable PDF.

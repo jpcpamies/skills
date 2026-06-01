@@ -1,5 +1,5 @@
 ---
-name: master-prompt-craft
+name: prompt-maestro-craft
 description: >
   Generador de Master Prompts en formato C.R.A.F.T. (Contexto, Rol, Acción, Formato, Target).
   Use this skill whenever the user wants to create a master prompt, a prompt profesional,
@@ -12,7 +12,7 @@ description: >
   a complete prompt in C.R.A.F.T. format.
 ---
 
-# MasterPrompt — Generador de Prompts en Formato C.R.A.F.T.
+# Prompt Maestro — Generador de Prompts en Formato C.R.A.F.T.
 
 Skill interactivo que entrevista al usuario y genera prompts excepcionales en formato C.R.A.F.T. (Contexto, Rol, Acción, Formato, Target).
 

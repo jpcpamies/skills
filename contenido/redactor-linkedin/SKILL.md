@@ -1,5 +1,5 @@
 ---
-name: linkedin-ghostwriter
+name: redactor-linkedin
 description: >
   Ghostwriter estratégico de LinkedIn. Genera posts de alto engagement aplicando
   neuropsicología, estructura signature y un escaneo de privacidad obligatorio.
@@ -11,7 +11,7 @@ description: >
   logro, caso, reflexión profesional o resultado como contenido social.
 ---
 
-# LinkedIn Ghostwriter — Arquitecto de Posts
+# Redactor LinkedIn — Arquitecto de Posts
 
 Skill que genera posts de LinkedIn de alto engagement aplicando técnicas de
 neuropsicología, una estructura signature y protocolos de privacidad.

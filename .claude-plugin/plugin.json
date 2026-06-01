@@ -1,6 +1,6 @@
 {
   "name": "jordipamies-skills",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Skills de IA aplicada, contenido y productividad, by Jordi Pàmies.",
   "author": {
     "name": "Jordi Pàmies",
@@ -10,11 +10,12 @@
   "repository": "https://github.com/jpcpamies/skills",
   "license": "MIT",
   "skills": [
-    "./contenido/linkedin-ghostwriter",
+    "./contenido/redactor-linkedin",
     "./contenido/transcripcion-depurada",
-    "./vibe-coding/canon-method",
-    "./vibe-coding/prd-interview",
-    "./prompting/master-prompt-craft",
-    "./investigacion/asistente-de-investigacion"
+    "./vibe-coding/metodo-desarrollo-canon",
+    "./vibe-coding/entrevista-prd",
+    "./prompting/prompt-maestro-craft",
+    "./investigacion/investigacion-cientifica",
+    "./base-de-conocimiento/conocimiento-youtube"
   ]
 }
