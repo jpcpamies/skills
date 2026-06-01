@@ -1,14 +1,14 @@
 ---
 name: entrevista-prd
 description: >
-  Use this skill whenever the user wants to plan a web application, create a PRD (Product Requirements Document),
-  define requirements for a No-Code or Low-Code project, or structure an app idea into a formal specification.
-  Trigger when the user says things like "I have an app idea", "help me plan my app", "create a PRD",
-  "I want to build an application", "help me define my project", "I need a requirements document",
-  or when they paste a large description of a project idea and want it structured into a PRD.
-  Also trigger when the user mentions "No-Code planning", "MVP definition", or "app specification".
-  This skill conducts a structured interview (adapting to information already provided), then generates
-  a professional PDF with the complete PRD.
+  Usa este skill siempre que el usuario quiera planificar una aplicación web, crear un PRD (Documento de
+  Requisitos de Producto), definir los requisitos de un proyecto No-Code o Low-Code, o estructurar la idea de
+  una app en una especificación formal. Actívalo cuando el usuario diga cosas como "tengo una idea de app",
+  "ayúdame a planear mi app", "crea un PRD", "quiero construir una aplicación", "ayúdame a definir mi proyecto",
+  "necesito un documento de requisitos", o cuando pegue una descripción larga de una idea de proyecto y quiera
+  estructurarla como PRD. También se activa cuando el usuario menciona "planificación No-Code", "definición de
+  MVP" o "especificación de app". Este skill conduce una entrevista estructurada (adaptándose a la información
+  ya proporcionada) y luego genera un PDF profesional con el PRD completo.
 ---
 
 # Entrevista PRD & Generador

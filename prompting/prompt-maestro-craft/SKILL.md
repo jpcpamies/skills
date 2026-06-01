@@ -2,14 +2,13 @@
 name: prompt-maestro-craft
 description: >
   Generador de Master Prompts en formato C.R.A.F.T. (Contexto, Rol, Acción, Formato, Target).
-  Use this skill whenever the user wants to create a master prompt, a prompt profesional,
-  a prompt en formato C.R.A.F.T., or any high-quality detailed prompt for ChatGPT or any LLM.
-  Trigger when the user says things like "quiero crear un master prompt", "crea un prompt",
+  Usa este skill siempre que el usuario quiera crear un master prompt, un prompt profesional,
+  un prompt en formato C.R.A.F.T., o cualquier prompt detallado de alta calidad para ChatGPT o cualquier LLM.
+  Actívalo cuando el usuario diga cosas como "quiero crear un master prompt", "crea un prompt",
   "necesito un prompt profesional", "hazme un prompt CRAFT", "genera un prompt detallado",
-  "create a master prompt", "I need a professional prompt", "build me a CRAFT prompt",
-  or any variation requesting prompt engineering or prompt creation.
-  This skill conducts a brief interview to understand the topic, then generates
-  a complete prompt in C.R.A.F.T. format.
+  o cualquier variación que pida ingeniería de prompts o creación de prompts.
+  Este skill conduce una breve entrevista para entender el tema y luego genera
+  un prompt completo en formato C.R.A.F.T.
 ---
 
 # Prompt Maestro — Generador de Prompts en Formato C.R.A.F.T.
