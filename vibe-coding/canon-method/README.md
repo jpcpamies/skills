@@ -36,15 +36,15 @@ Al terminar genera los 5 documentos y te explica las dos capas y los siguientes 
 ## Receta con Claude Code
 
 1. Coloca los 5 archivos en la carpeta del proyecto.
-2. Abre la carpeta en Claude Code → lee `CLAUDE.md` (Estado A) → trae `FRAMEWORK_DEV.md` → escribe `PROJECT_PLAN.md` → **STOP** para tu OK.
+2. Abre la carpeta en Claude Code → lee `CLAUDE.md` (Estado A) → copia `FRAMEWORK_DEV.md` (incluido en el skill) a `docs/` → escribe `PROJECT_PLAN.md` → **STOP** para tu OK.
 3. Ejecuta: **Fase 0** scaffold + `npx impeccable skills install` + saltar `teach` (PRODUCT.md/DESIGN.md ya existen).
 4. **Build loop** atómico siguiendo el Golden Order, aplicando `DESIGN.md` y puliendo con Impeccable.
 
-## Framework remoto (ya configurado)
+## Framework incluido (sin descargas)
 
-El framework se trae siempre de la última versión desde:
-`https://raw.githubusercontent.com/jpcpamies/canon-framework/main/FRAMEWORK_DEV.md`
-Si no hay red, se usa la copia incluida en `assets/FRAMEWORK_DEV.md` como fallback.
+El `FRAMEWORK_DEV.md` viaja **dentro del skill**, en `references/FRAMEWORK_DEV.md`.
+Cuando se planifica un proyecto, se **copia** desde ahí a `docs/FRAMEWORK_DEV.md`.
+No se descarga de internet — funciona siempre, también sin red.
 
 ## Estructura del skill
 
@@ -64,8 +64,7 @@ canon/
     design-md-spec.md          Spec destilado de Google Stitch DESIGN.md
     impeccable-integration.md  Comandos/instalación/anti-slop verificados
     integration-bootstrap.md   Paso 0 de integraciones externas (plugin/MCP/SDK oficiales)
-  assets/
-    FRAMEWORK_DEV.md           Copia fallback del Golden Order (alineada con CANON)
+    FRAMEWORK_DEV.md           El Golden Order de construcción (se copia a docs/ del proyecto)
 ```
 
 *Canon Method · v2.0 · creado por Jordi Pàmies*

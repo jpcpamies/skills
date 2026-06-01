@@ -49,7 +49,7 @@ founder-market fit, ICP ligero, diferenciación en 5 ejes. Veredicto: seguir / p
 **Etapa 3 — North Star (N).** Dentro del bloque de diseño se fija el *Creative North Star*: una metáfora nombrada que
 gobierna todo el sistema visual. El diseño deja de improvisarse.
 
-**Etapa 4 — Process (Orden, O).** CANON trae la última versión de `FRAMEWORK_DEV.md` desde GitHub a `/docs/` y genera
+**Etapa 4 — Process (Orden, O).** CANON copia el `FRAMEWORK_DEV.md` incluido en el skill (carpeta `references/`) a `/docs/` y genera
 el `CLAUDE.md` ya cableado (ciclo de desarrollo + integración Impeccable + visual checklist derivada del DESIGN.md).
 
 → *Aquí termina el trabajo de CANON: una carpeta con 5 archivos en 2 capas.*

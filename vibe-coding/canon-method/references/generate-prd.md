@@ -56,8 +56,7 @@ Incluye este texto en el PRD (la URL del framework ya está cableada):
 
 Este proyecto sigue el **Canon Method**. Antes de escribir el `PROJECT_PLAN.md`, Claude Code DEBE:
 
-1. **Traer el framework de construcción** a `/docs/FRAMEWORK_DEV.md` desde la última versión:
-   `curl -fsSL https://raw.githubusercontent.com/jpcpamies/canon-framework/main/FRAMEWORK_DEV.md -o docs/FRAMEWORK_DEV.md` (o WebFetch). Si no hay red, usa la copia incluida.
+1. **Copiar el framework de construcción** a `docs/FRAMEWORK_DEV.md`: usa el `FRAMEWORK_DEV.md` que viene incluido en este skill (carpeta `references/`) y escríbelo en `docs/FRAMEWORK_DEV.md`. Viaja con el skill; **no se descarga de internet**.
 2. **Generar `PROJECT_PLAN.md`** siguiendo el Golden Order de `FRAMEWORK_DEV.md`, adaptado a este PRD, en subfases atómicas.
 
 ### Capa de calidad de diseño: Impeccable (Non-slop)

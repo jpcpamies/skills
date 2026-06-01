@@ -4,8 +4,7 @@
 > estructura, comandos) y del DESIGN.md (visual checklist §13). Hereda el enfoque del gold standard "Isla de los Toros":
 > ya reconciliado con Impeccable (§12) y con Two-Voice (sin "Inter para todo").
 
-También: deja en el `CLAUDE.md` (o ejecuta como paso de cierre) la instrucción de traer el framework:
-`curl -fsSL https://raw.githubusercontent.com/jpcpamies/canon-framework/main/FRAMEWORK_DEV.md -o docs/FRAMEWORK_DEV.md` (o copia la versión incluida en el skill si no hay red).
+También: copia el `FRAMEWORK_DEV.md` que viene incluido en este skill (carpeta `references/`) a `docs/FRAMEWORK_DEV.md` del proyecto. Viaja con el skill; **no se descarga de internet**.
 
 Incluye SIEMPRE la §14 (Integraciones externas). Si el PRD (P9) lista integraciones concretas, nómbralas ahí.
 
@@ -39,7 +38,7 @@ Atomicidad: cada subfase = 1-3 archivos, un objetivo, commiteable sola.
 ## 6. Session Start Protocol
 ### Estado A: No existe PROJECT_PLAN.md
 1. Lee `PRD.md` (y `docs/`: FRAMEWORK_DEV.md, PRODUCT.md, DESIGN.md).
-2. Si falta `docs/FRAMEWORK_DEV.md`, tráelo: `curl -fsSL https://raw.githubusercontent.com/jpcpamies/canon-framework/main/FRAMEWORK_DEV.md -o docs/FRAMEWORK_DEV.md`.
+2. Si falta `docs/FRAMEWORK_DEV.md`, cópialo del `FRAMEWORK_DEV.md` incluido en este skill (carpeta `references/`).
 3. Crea `PROJECT_PLAN.md` siguiendo el Golden Order de FRAMEWORK_DEV.md adaptado al PRD (subfases atómicas).
 4. STOP. Espera "OK".
 ### Estado B: existe, sin tareas completadas → lee plan, resume, presenta primera tarea → §8.

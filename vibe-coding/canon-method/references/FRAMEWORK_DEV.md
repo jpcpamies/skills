@@ -1,5 +1,5 @@
 # FRAMEWORK_DEV.md
-## Development Framework for Fullstack Web Apps — Canon Method
+## Development Framework for Fullstack Web Apps — Método CANON
 
 > Reusable, stack-agnostic framework for fullstack web apps. Default stack: React 18 (Vite) + TypeScript strict +
 > Tailwind + shadcn/ui on the frontend; backend/DB one of Convex · Express+Supabase · Hono+Turso; auth Clerk or
@@ -63,13 +63,13 @@
 
 **Tasks**:
 1. Scaffold the project skeleton for the stack defined in CLAUDE.md (root, package.json, base config).
-2. Install Impeccable: `npx impeccable skills install` (auto-detects Claude Code; latest version). Update with `npx impeccable skills update`.
+2. Install Impeccable: `npx impeccable skills install` (auto-detects Claude Code; latest). Update with `npx impeccable skills update`.
 3. Verify `PRODUCT.md` and `DESIGN.md` are present (root or `/docs/`). They exist (CANON generated them) → **DO NOT run `/impeccable teach` or `/impeccable init`**.
 4. (Optional) Refresh `docs/FRAMEWORK_DEV.md` to the latest version from the CANON framework repo.
 
 **Deliverables**:
 - [ ] Project root initialized
-- [ ] `/impeccable` available in the harness (autocomplete)
+- [ ] `/impeccable` available in the harness
 - [ ] PRODUCT.md + DESIGN.md resolved by Impeccable's loader
 
 ---
@@ -325,4 +325,4 @@ Future expansions re-enter the build loop with the same Impeccable discipline.
 
 ---
 
-*Canon Method · Framework reutilizable y alineado · stack-agnostic · v2.0*
+*Método CANON · Framework reutilizable y alineado · stack-agnostic · v2.0*

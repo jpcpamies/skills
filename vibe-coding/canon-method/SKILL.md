@@ -40,7 +40,7 @@ siempre, en cada sesión, cada proyecto y cada ampliación futura. Esa repetibil
 
 **Capa de proceso** (cómo trabajar, reutilizable):
 - `CLAUDE.md` — comportamiento de Claude Code (rol, ciclo de desarrollo, integración Impeccable, visual checklist).
-- `FRAMEWORK_DEV.md` — el Golden Order de construcción (se trae de GitHub a `/docs/`, o se usa la copia incluida).
+- `FRAMEWORK_DEV.md` — el Golden Order de construcción (incluido en este skill, en `references/`; se copia a `/docs/`).
 
 ## Shared context (tono y reglas, válido para todo el skill)
 
@@ -92,7 +92,7 @@ Antes de actuar, mira la carpeta de trabajo:
 2. **Bloque 2 — PRD** (`interview-prd.md`). Confirmar.
 3. **Bloque 3 — Design** (`interview-design.md`), pide referencias visuales/capturas. Confirmar.
 4. **Generar capa de producto:** `PRD.md`, `PRODUCT.md`, `DESIGN.md` (ver `generate-*`).
-5. **Generar capa de proceso:** traer `FRAMEWORK_DEV.md` y escribir `CLAUDE.md` (ver `generate-claude.md`).
+5. **Generar capa de proceso:** copiar `FRAMEWORK_DEV.md` (incluido en `references/`) a `/docs/` y escribir `CLAUDE.md` (ver `generate-claude.md`).
 6. **Cierre:** explica al usuario las dos capas, los 5 archivos, y los siguientes pasos en Claude Code
    (abrir carpeta → Claude Code lee CLAUDE.md → genera PROJECT_PLAN.md → scaffold → instala Impeccable → build loop).
 
