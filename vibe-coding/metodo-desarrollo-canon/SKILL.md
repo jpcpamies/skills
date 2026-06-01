@@ -21,8 +21,6 @@ metadata:
 Skill de planificación spec-driven para desarrollo de apps web full-stack con Claude Code.
 Una entrevista guiada produce los documentos que gobiernan todo el ciclo de vida del proyecto.
 
-> 🧪 SENTINELA-AUTOUPDATE · prueba 1-jun · v0.1.3 — si ves esta línea en Cowork, el cambio del repo ha llegado.
-
 CANON = **C**onsistencia · **A**tomicidad · **N**orth Star · **O**rden · **N**on-slop.
 La palabra *canon* es el principio rector: un estándar correcto y **repetible** — trabajar siempre de la misma manera.
 
