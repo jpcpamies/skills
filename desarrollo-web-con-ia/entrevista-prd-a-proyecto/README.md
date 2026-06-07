@@ -1,4 +1,4 @@
-# Canon Method — skill de planificación de apps
+# Entrevista PRD a Proyecto — génesis del Método Canon
 
 **CANON** = **C**onsistencia · **A**tomicidad · **N**orth Star · **O**rden · **N**on-slop.
 Un método *spec-driven* para construir apps web full-stack con Claude Code: una entrevista guiada genera los documentos
@@ -12,15 +12,17 @@ que gobiernan todo el ciclo de vida. *Canon* = un estándar correcto y **repetib
 **Capa de producto** (qué construir): `PRD.md` · `PRODUCT.md` · `DESIGN.md`
 **Capa de proceso** (cómo trabajar): `CLAUDE.md` · `FRAMEWORK_DEV.md`
 
-## Instalación (Claude Code)
+## Instalación
+
+Es la **génesis del Método Canon** y corre en **Cowork**. Se distribuye dentro del plugin
+`jordipamies-skills`:
 
 ```bash
-# Por proyecto
-cp -r canon ~/ruta-al-proyecto/.claude/skills/
-# O global (todos los proyectos)
-cp -r canon ~/.claude/skills/
+/plugin marketplace add jpcpamies/skills
+/plugin install jordipamies-skills@jordipamies-skills
+/reload-plugins
 ```
-Recarga el harness y teclea `/` — debería aparecer `canon`. (También instalable como skill de Cowork.)
+Tras recargar, invócalo por su trigger (*"método canon"*, *"nuevo proyecto"*, *"crear un PRD"*).
 
 ## Cómo se usa
 
@@ -49,7 +51,7 @@ No se descarga de internet — funciona siempre, también sin red.
 ## Estructura del skill
 
 ```
-canon/
+entrevista-prd-a-proyecto/
   SKILL.md                     Spine + routing + tono + warm start + resumibilidad
   README.md                    Este archivo
   references/
@@ -67,5 +69,5 @@ canon/
     FRAMEWORK_DEV.md           El Golden Order de construcción (se copia a docs/ del proyecto)
 ```
 
-*Canon Method · v2.0 · creado por Jordi Pàmies*
+*Entrevista PRD a Proyecto · génesis del Método Canon · superficie Cowork · v2.0 · creado por Jordi Pàmies*
 *(v2.0 añade el bootstrap de integraciones externas: §14 del CLAUDE.md + references/integration-bootstrap.md)*

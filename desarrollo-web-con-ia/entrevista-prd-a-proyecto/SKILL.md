@@ -1,7 +1,8 @@
 ---
-name: metodo-desarrollo-canon
+name: entrevista-prd-a-proyecto
 description: >
-  Método Desarrollo CANON — planificación completa de aplicaciones web full-stack para desarrollo con IA (Claude Code local).
+  [Cowork · Método Canon] Génesis del método: entrevista guiada en Cowork que planifica una aplicación web
+  full-stack y genera los documentos de gobierno para construirla con IA en Claude Code.
   Conduce una entrevista guiada en tres bloques (Validate → PRD → Design) y genera cinco documentos en dos capas:
   capa de producto (PRD.md, PRODUCT.md, DESIGN.md) y capa de proceso (CLAUDE.md, FRAMEWORK_DEV.md), listos para
   pegar a Claude Code. Úsalo cuando el usuario quiera: planear una app o webapp, crear un PRD, definir requisitos,
@@ -13,10 +14,11 @@ description: >
 license: MIT
 metadata:
   author: Jordi Pàmies
+  surface: Cowork
   method: CANON (Consistencia · Atomicidad · North Star · Orden · Non-slop)
 ---
 
-# Método Desarrollo CANON
+# Entrevista PRD a Proyecto — génesis del Método Canon
 
 Skill de planificación spec-driven para desarrollo de apps web full-stack con Claude Code.
 Una entrevista guiada produce los documentos que gobiernan todo el ciclo de vida del proyecto.
