@@ -1,4 +1,4 @@
-# Ejes de auditoría (A–J)
+# Ejes de auditoría (A–K)
 
 > Catálogo de lo que `revisa-el-project-plan` comprueba. Cada eje cita su fuente en el **Canon Plan
 > Standard** (`canon-plan-standard.md`), se evalúa **relativo al tier** y se mide contra los **bindings
@@ -111,12 +111,38 @@
 - **Blando:** gatillo no disparado: mantener el tier actual es lo correcto.
 - **Evidencia:** qué gatillo, con qué métrica; acción de §9 que tocaría (y que solo se ejecuta con OK).
 
+## K · El CLAUDE.md §0 — la copia operativa del Standard — §0 (Standard), §9
+
+- **Mide:** que el `CLAUDE.md` del repo lleve, como **§0** (lo primero), la **copia operativa del Canon Plan
+  Standard**: el principio "el plan es la masa", el bloque de **tier y bindings declarados (0.A)**, y los
+  protocolos de lectura/escritura/archivado/memoria/trazabilidad. Es lo que hace que Claude Code **mantenga**
+  el plan con la metodología; sin él, montar la infraestructura (archive/, CHANGELOG, capas) no sirve: nadie
+  la mantiene y el plan se vuelve a desordenar. La génesis lo planta en Cowork; en un repo adoptado directo en
+  Claude Code puede no existir, y `revisa` debe plantarlo (con OK).
+- **Duro (ausente):** no hay `CLAUDE.md`, o lo hay pero **sin §0** operativo → el repo no declara su estándar
+  ni sus bindings; defecto de proceso y de continuidad (el auditor ni siquiera tiene de dónde leer los
+  bindings y cae a detectarlos del plan).
+- **Duro (desfasado):** el §0 existe pero **contradice la infraestructura/el tier reales** — p. ej. el repo se
+  promocionó a Tier L (hay `archive/` + CHANGELOG) pero el §0 sigue describiendo Tier S, o el bloque 0.A
+  declara un tier/bindings que no son los del repo. Tras una transición de tier, un §0 sin refrescar es deuda.
+- **Blando:** el §0 existe y es coherente pero usa otros títulos de sub-sección, o omite una capa que el tier
+  aún no necesita: mapea y no marques. Diferencias de redacción respecto a la canónica que no cambian el
+  contenido: nota, no defecto.
+- **Evidencia:** ¿existe `CLAUDE.md`? ¿tiene §0? ¿el tier/bindings de 0.A coinciden con la topología real y
+  con el tier del eje B? — del scan (`CLAUDE.md` / marcador del §0) y de la lectura.
+- **Acción (solo con OK):** plantar o refrescar el §0 al principio del `CLAUDE.md` desde
+  `assets/claude-md-seccion-0.md`, instanciado al tier del eje B y a los bindings detectados. Reemplaza un §0
+  existente, nunca lo duplica.
+
 ---
 
 ## Cómo puntuar el conjunto
 
 - **Veredicto = el peor eje con defecto duro.** Cualquier invariante roto ⇒ veredicto al menos "con
   deuda"; varios o uno de continuidad/fuente-única ⇒ "crítico".
-- **Tier correcto + cero duros + bindings respetados ⇒ "sano"** aunque el formato no sea el tuyo.
+- **Un §0 ausente (eje K) pesa como duro de continuidad:** la infraestructura sin la doctrina que la
+  mantiene se vuelve a desordenar. Cuenta para el veredicto aunque el resto del plan esté limpio hoy.
+- **Tier correcto + cero duros + §0 coherente + bindings respetados ⇒ "sano"** aunque el formato no sea el
+  tuyo.
 - Ordena los hallazgos por severidad (duro antes que blando) y por coste de continuidad (lo que hace
   perder el hilo del estado va primero).

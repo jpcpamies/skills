@@ -16,7 +16,13 @@ este lenguaje:
 |---|---|---|
 | `entrevista-prd-a-proyecto` (`generate-claude`) | Cowork | **Emite** este Standard como sección §0 del `CLAUDE.md` que genera, instanciado en el tier que toque (un proyecto nuevo nace en **Tier S**). |
 | `anade-esto-al-project-plan` | Claude Code | **Conforma**: cada fase/subfase que inserta respeta §6 (plantilla única) y el tier vigente. |
-| `revisa-el-project-plan` | Claude Code | **Hace cumplir**: audita el plan real contra §2 (invariantes), §4 (tier correcto), §5/§7/§8 y §10. |
+| `revisa-el-project-plan` | Claude Code | **Hace cumplir Y re-emite**: audita el plan real contra §2 (invariantes), §4 (tier correcto), §5/§7/§8 y §10; y **planta o refresca el §0** del `CLAUDE.md` cuando falta o se quedó desfasado tras una transición de tier (§9). |
+
+> **El §0 operativo es obligatorio en todo repo mantenido bajo este método, no solo en los que pasaron por la
+> génesis.** Sin él, Claude Code monta la infraestructura (capas, `archive/`, CHANGELOG) pero no tiene las
+> instrucciones para mantenerla, y el plan se vuelve a desordenar. La génesis lo planta en Cowork; en un repo
+> adoptado directamente en Claude Code, lo planta `revisa-el-project-plan` (con autorización). La plantilla
+> operativa vive en `revisa-el-project-plan/assets/claude-md-seccion-0.md`.
 
 **Regla de sincronización (crítica).** La fuente canónica de este texto vive aquí
 (`metodo-canon/revisa-el-project-plan/references/canon-plan-standard.md`). Su copia operativa viaja dentro del
@@ -238,8 +244,10 @@ autorización**, no algo que se deja a medias:
   el índice solo rollup + cola + tabla de completadas; parquear specs futuras en `backlog.md`;
   versionar en `docs/decisions/` las memorias que el plan cite.
 
-Tras **cualquier** transición o reencauce: **re-medir** el estado vivo y correr el checklist de
-coherencia (§10). Si el repo separa push del humano, no se publica solo.
+Tras **cualquier** transición o reencauce: **re-medir** el estado vivo, correr el checklist de
+coherencia (§10), y **refrescar el `CLAUDE.md §0`** para que su bloque 0.A (tier + bindings) y sus
+protocolos reflejen el nuevo tier — la infraestructura recién montada solo se mantiene si las
+instrucciones de §0 la describen. Si el repo separa push del humano, no se publica solo.
 
 ---
 
@@ -267,6 +275,7 @@ entrevista-prd-a-proyecto  ──emite──►   CLAUDE.md §0  (copia operativ
 anade-esto-al-project-plan  ──conforma──►  cada entrada respeta §6 y el tier vigente
                                             │
 revisa-el-project-plan  ──hace cumplir──►  audita contra §2 · §4 · §5 · §7 · §8 · §10
+                        └─re-emite──────►  planta/refresca CLAUDE.md §0 (eje K) si falta o quedó desfasado
 ```
 
 *Canon Plan Standard · fuente canónica: `metodo-canon/revisa-el-project-plan/references/canon-plan-standard.md` ·

@@ -28,6 +28,7 @@
 | H · Memorias (I7/§8) | {{…}} | {{…}} | {{refs RESUELVE/ROTA}} | {{…}} |
 | I · Coherencia dashboard (§10) | {{…}} | {{…}} | {{contadores vs tablas}} | {{…}} |
 | J · Transición de tier (§4/§9) | {{…}} | {{…}} | {{gatillo}} | {{…}} |
+| K · CLAUDE.md §0 operativo (§0/§9) | {{…}} | {{…}} | {{¿existe CLAUDE.md? ¿§0? ¿0.A coincide con el tier?}} | {{plantar/refrescar §0}} |
 
 > Orden: defectos duros antes que blandos; lo que hace perder el hilo del estado, primero.
 
@@ -41,9 +42,12 @@
 3. {{p. ej. "Arreglar drift (§10): el dashboard dice 45 fases, las tablas suman 38 — recontar."}}
 4. {{p. ej. "Versionar la memoria `[[decision-x]]` (§8): hoy solo vive en local; moverla a
    `docs/decisions/`."}}
+5. {{p. ej. "Plantar el `CLAUDE.md §0` (eje K): el repo no lleva la copia operativa del Standard; copiar
+   `assets/claude-md-seccion-0.md` como §0 del `CLAUDE.md`, con 0.A instanciado a Tier {{S/M/L}} y los
+   bindings detectados." — o "Refrescar el §0: el repo se promocionó a Tier L pero el §0 sigue en Tier S."}}
 
-**Tras ejecutar (si se autoriza):** re-medir el estado vivo, correr el checklist de coherencia §10, y no
-publicar solo si el repo separa el push del humano.
+**Tras ejecutar (si se autoriza):** re-medir el estado vivo, correr el checklist de coherencia §10, **refrescar
+el `CLAUDE.md §0`** (bloque 0.A al tier vigente), y no publicar solo si el repo separa el push del humano.
 
 ## Checklist de coherencia (§10) — estado
 
@@ -54,3 +58,4 @@ publicar solo si el repo separa el push del humano.
 - [ ] El estado vivo está dentro del presupuesto de su tier.
 - [ ] El tier es el correcto (ni infra, ni sobre-ingeniería).
 - [ ] Existe un puntero NEXT / reanudación claro.
+- [ ] El `CLAUDE.md` lleva el §0 operativo y su bloque 0.A (tier + bindings) coincide con la realidad.

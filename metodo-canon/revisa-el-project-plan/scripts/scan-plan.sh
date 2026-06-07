@@ -85,4 +85,34 @@ else
   done <<< "$REFS"
 fi
 hr
+
+# 5. CLAUDE.md y su §0 operativo (eje K) -----------------------------------------
+say "## CLAUDE.md y su §0 operativo (eje K)"
+CLAUDE=""
+for cand in "$ROOT/CLAUDE.md" "$ROOT/docs/CLAUDE.md" "$ROOT/.claude/CLAUDE.md"; do
+  [ -f "$cand" ] && { CLAUDE="$cand"; break; }
+done
+if [ -z "$CLAUDE" ]; then
+  say "CLAUDE_FILE: (no encontrado) → eje K DURO: sin CLAUDE.md no hay §0 que gobierne el plan."
+else
+  say "CLAUDE_FILE: $CLAUDE"
+  # ¿Hay una sección §0 (encabezado '## 0' / '# 0')?
+  if grep -qE '^#{1,3}[[:space:]]*0([.)[:space:]]|$)' "$CLAUDE" 2>/dev/null; then
+    say "SECCION_0: presente"
+  else
+    say "SECCION_0: AUSENTE → eje K DURO: el CLAUDE.md no lleva §0 operativo."
+  fi
+  # Marcadores de la copia operativa del Standard (cualquiera basta).
+  if grep -qiE 'Canon Plan Standard|el plan es la masa|the plan is the mass|Gesti(o|ó)n del PROJECT_PLAN|PROJECT_PLAN Management' "$CLAUDE" 2>/dev/null; then
+    say "MARCADOR_STANDARD: presente (parece copia operativa del Standard)"
+  else
+    say "MARCADOR_STANDARD: ausente (si hay §0, revisar si es realmente la copia operativa del Standard)"
+  fi
+  # Bindings declarados (bloque 0.A) — señal de §0 instanciado al repo.
+  grep -qiE 'Tier actual|bindings? declarad' "$CLAUDE" 2>/dev/null \
+    && say "BLOQUE_0A: presente (tier/bindings declarados)" \
+    || say "BLOQUE_0A: ausente (el §0 no declara tier ni bindings de este repo)"
+fi
+hr
+
 say "FIN. Métricas objetivas; la interpretación (tier, defectos) la hace revisa-el-project-plan."
