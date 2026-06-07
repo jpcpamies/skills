@@ -13,10 +13,16 @@ Incluye SIEMPRE la §14 (Integraciones externas). Si el PRD (P9) lista integraci
 Emite SIEMPRE, como **§0** del `CLAUDE.md`, la **copia operativa del Canon Plan Standard**, instanciada a
 **Tier S** (todo proyecto nuevo nace en Tier S). Es la doctrina que gobierna cómo se crea, mantiene y audita
 el `PROJECT_PLAN`: "el plan es la masa", invariantes I1–I7, bindings del repo, tiers S/M/L, plantilla de fase
-única §6, trazabilidad y memorias. Fuente canónica: el `canon-plan-standard.md` de la skill hermana
-`revisa-el-project-plan` (misma familia `metodo-canon`); cópialo como §0 y, si alguna vez la copia y la
-canónica divergen, **manda la canónica**. **Sin este §0**, un plan recién creado no conoce su propio estándar
-de calidad y suspendería su propia auditoría con `revisa-el-project-plan`.
+única §6, trazabilidad y memorias.
+
+**Plantilla operativa compartida (úsala literal):** copia
+`revisa-el-project-plan/assets/claude-md-seccion-0.md` (misma familia `metodo-canon`) como §0, rellenando su
+bloque **0.A** con Tier S y los bindings por defecto del método (B1 `✅/⏳/📌`, B2 `Fase X.Y`, B3 `tipo(X.Y): …`,
+B4 VALIDATE humano, B5 ~200/~2000, B6 las rutas estándar). Es el **mismo** §0 que el auditor
+`revisa-el-project-plan` planta o refresca después, así no divergen. Doctrina canónica detrás:
+`revisa-el-project-plan/references/canon-plan-standard.md`; si la copia operativa y la canónica divergen,
+**manda la canónica**. **Sin este §0**, un plan recién creado no conoce su propio estándar de calidad y
+suspendería su propia auditoría con `revisa-el-project-plan` (eje K).
 
 ## Plantilla (rellena los [slots] desde el PRD/DESIGN)
 
@@ -24,11 +30,13 @@ de calidad y suspendería su propia auditoría con `revisa-el-project-plan`.
 # CLAUDE.md — [Nombre del Proyecto]
 > Guía unificada: stack, convenciones, ciclo de desarrollo y reglas de IA. Método Canon.
 
-## 0. Canon Plan Standard (doctrina del PROJECT_PLAN)
-[Pega aquí la copia operativa del Canon Plan Standard, instanciada a Tier S. Fuente canónica: el
-`canon-plan-standard.md` de la skill hermana `revisa-el-project-plan` (familia metodo-canon). Gobierna cómo se
-crea, mantiene y audita el plan: "el plan es la masa", invariantes I1–I7, bindings del repo, tiers S/M/L,
-plantilla de fase única §6, trazabilidad y memorias. Si la copia y la canónica divergen, manda la canónica.]
+## 0. Gestión del PROJECT_PLAN — LEER PRIMERO (canónico, extraíble)
+[Pega aquí, literal, la plantilla operativa `revisa-el-project-plan/assets/claude-md-seccion-0.md` (familia
+metodo-canon), con su bloque 0.A instanciado a Tier S y los bindings por defecto del método. Es el mismo §0
+que el auditor `revisa-el-project-plan` planta/refresca; no lo reescribas a mano. Gobierna cómo se crea,
+mantiene y audita el plan: "el plan es la masa", invariantes I1–I7, bindings del repo, tiers S/M/L, plantilla
+de fase única §6, trazabilidad y memorias. Doctrina canónica: `canon-plan-standard.md`; si divergen, manda la
+canónica.]
 
 ## 1. Stack Tecnológico
 [Del PRD P12. Ej: React 18 (Vite), TS strict, Tailwind v4, shadcn/ui; backend [Convex|Express+Supabase|Hono+Turso];
