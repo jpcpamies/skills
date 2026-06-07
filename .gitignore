@@ -10,5 +10,9 @@ Thumbs.db
 *.log
 *.tmp
 
+# Alias de Finder personales (apuntan a rutas locales/NAS de cada máquina)
+SKILLS (NAS) - Descatalogado
+SKILLS DESARROLLO WEB  - Descatalogado
+
 # Exports empaquetados de skills (artefactos, no fuente)
 *.zip
