@@ -13,6 +13,12 @@ description: >
 
 # Entrevista PRD & Generador
 
+> ⚠️ **DESCATALOGADO.** Este skill ya no forma parte de la familia activa del Método Canon. Lo sustituye
+> **`entrevista-prd-a-proyecto`** (la génesis del método, superficie Cowork, que genera los 5 documentos de
+> gobierno). `entrevista-prd` era el track **No-Code/Low-Code**: una entrevista de 12 preguntas que producía
+> un único **PRD en PDF** para construir con Lovable/Bolt/V0/Cursor. Se conserva aquí solo como referencia
+> histórica; **no se registra en `plugin.json`** ni se distribuye.
+
 An interactive skill that interviews the user to gather structured information about their web application idea,
 then generates a professional PRD (Product Requirements Document) as a downloadable PDF.
 
