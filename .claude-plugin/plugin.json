@@ -12,8 +12,9 @@
   "skills": [
     "./contenido/redactor-linkedin",
     "./contenido/transcripcion-depurada",
-    "./vibe-coding/metodo-desarrollo-canon",
-    "./vibe-coding/entrevista-prd",
+    "./metodo-canon/entrevista-prd-a-proyecto",
+    "./metodo-canon/anade-esto-al-project-plan",
+    "./metodo-canon/revisa-el-project-plan",
     "./prompting/prompt-maestro-craft",
     "./investigacion/investigacion-cientifica",
     "./base-de-conocimiento/conocimiento-youtube"
