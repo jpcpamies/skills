@@ -1,4 +1,4 @@
-# El Canon Method — metodología y ciclo de vida
+# El Método Canon — metodología y ciclo de vida
 
 > Modo explicación. Si el usuario pregunta "¿cómo funciona?", "¿cuál es la secuencia?", "explícame la metodología",
 > resume este documento con tus palabras. NO arranques ninguna entrevista.

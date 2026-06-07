@@ -7,7 +7,7 @@
 
 ```
 # PRD — [Nombre del Proyecto]
-> Product Requirements Document · Canon Method · [fecha]
+> Product Requirements Document · Método Canon · [fecha]
 
 ## 1. Resumen Ejecutivo
 Problema núcleo, propuesta en 2-3 frases, veredicto de validación (painkiller).
@@ -54,7 +54,7 @@ Incluye este texto en el PRD (la URL del framework ya está cableada):
 ```markdown
 ## 12. Metodología de Desarrollo
 
-Este proyecto sigue el **Canon Method**. Antes de escribir el `PROJECT_PLAN.md`, Claude Code DEBE:
+Este proyecto sigue el **Método Canon**. Antes de escribir el `PROJECT_PLAN.md`, Claude Code DEBE:
 
 1. **Copiar el framework de construcción** a `docs/FRAMEWORK_DEV.md`: usa el `FRAMEWORK_DEV.md` que viene incluido en este skill (carpeta `references/`) y escríbelo en `docs/FRAMEWORK_DEV.md`. Viaja con el skill; **no se descarga de internet**.
 2. **Generar `PROJECT_PLAN.md`** siguiendo el Golden Order de `FRAMEWORK_DEV.md`, adaptado a este PRD, en subfases atómicas.

@@ -55,7 +55,7 @@ entrevista-prd-a-proyecto/
   SKILL.md                     Spine + routing + tono + warm start + resumibilidad
   README.md                    Este archivo
   references/
-    methodology.md             El Canon Method (modo explicación)
+    methodology.md             El Método Canon (modo explicación)
     interview-validate.md      Bloque 1 — viabilidad
     interview-prd.md           Bloque 2 — las 12 preguntas del PRD
     interview-design.md        Bloque 3 — sistema visual (integra teach de Impeccable)

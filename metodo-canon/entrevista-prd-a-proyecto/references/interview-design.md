@@ -49,5 +49,5 @@ marcas/productos que te gusten. Cuanto más concreto, menos genérico saldrá el
 - → `PRODUCT` Accessibility & Inclusion.
 
 ## Cierre del bloque
-Resume el sistema visual y confirma: "Con esto genero los 5 documentos del Canon Method. ¿Procedo?"
+Resume el sistema visual y confirma: "Con esto genero los 5 documentos del Método Canon. ¿Procedo?"
 Tras el OK, sigue `generate-prd.md`, `generate-product.md`, `generate-design.md`, y luego `generate-claude.md`.
