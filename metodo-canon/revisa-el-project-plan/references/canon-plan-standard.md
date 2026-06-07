@@ -14,18 +14,19 @@ este lenguaje:
 
 | Consumidor | Superficie | Qué hace con el Standard |
 |---|---|---|
-| `metodo-desarrollo-canon` (`generate-claude`) | Cowork | **Emite** este Standard como sección §0 del `CLAUDE.md` que genera, instanciado en el tier que toque (un proyecto nuevo nace en **Tier S**). |
-| `planifica` | Claude Code | **Conforma**: cada fase/subfase que inserta respeta §6 (plantilla única) y el tier vigente. |
-| `revisa-project-plan` | Claude Code | **Hace cumplir**: audita el plan real contra §2 (invariantes), §4 (tier correcto), §5/§7/§8 y §10. |
+| `entrevista-prd-a-proyecto` (`generate-claude`) | Cowork | **Emite** este Standard como sección §0 del `CLAUDE.md` que genera, instanciado en el tier que toque (un proyecto nuevo nace en **Tier S**). |
+| `anade-esto-al-project-plan` | Claude Code | **Conforma**: cada fase/subfase que inserta respeta §6 (plantilla única) y el tier vigente. |
+| `revisa-el-project-plan` | Claude Code | **Hace cumplir**: audita el plan real contra §2 (invariantes), §4 (tier correcto), §5/§7/§8 y §10. |
 
 **Regla de sincronización (crítica).** La fuente canónica de este texto vive aquí
-(`revisa-project-plan/references/canon-plan-standard.md`). Su copia operativa viaja dentro del
-`CLAUDE.md §0` que `generate-canon` planta en cada repo. Ambas copias deben mantenerse alineadas;
-si divergen, **manda esta**.
+(`metodo-canon/revisa-el-project-plan/references/canon-plan-standard.md`). Su copia operativa viaja dentro del
+`CLAUDE.md §0` que `entrevista-prd-a-proyecto` (`generate-claude`) planta en cada repo. Ambas copias deben
+mantenerse alineadas; si divergen, **manda esta**.
 
 **Por qué importa la portabilidad.** El estándar no obliga a nadie a conocer la doctrina de
-antemano: `canon` la **inyecta** en el `CLAUDE.md` de cualquier proyecto. A partir de ahí,
-`planifica` y `revisa` funcionan en *ese* repo con *sus* convenciones. El método se auto-propaga.
+antemano: `entrevista-prd-a-proyecto` la **inyecta** en el `CLAUDE.md` de cualquier proyecto. A partir de ahí,
+`anade-esto-al-project-plan` y `revisa-el-project-plan` funcionan en *ese* repo con *sus* convenciones. El
+método se auto-propaga.
 
 ---
 
@@ -261,12 +262,12 @@ Auto-auditoría que impide que el índice se desincronice de la realidad:
 ## Apéndice — mapa de la familia
 
 ```
-metodo-desarrollo-canon  ──emite──►   CLAUDE.md §0  (copia operativa de este Standard, instanciada a Tier S)
+entrevista-prd-a-proyecto  ──emite──►   CLAUDE.md §0  (copia operativa de este Standard, instanciada a Tier S)
                                             │
-planifica  ──conforma──►  cada entrada respeta §6 y el tier vigente
+anade-esto-al-project-plan  ──conforma──►  cada entrada respeta §6 y el tier vigente
                                             │
-revisa-project-plan  ──hace cumplir──►  audita contra §2 · §4 · §5 · §7 · §8 · §10
+revisa-el-project-plan  ──hace cumplir──►  audita contra §2 · §4 · §5 · §7 · §8 · §10
 ```
 
-*Canon Plan Standard · fuente canónica: `revisa-project-plan/references/canon-plan-standard.md` ·
-mantener sincronizada con la copia embebida en `generate-claude` · v1 (2026-06-07).*
+*Canon Plan Standard · fuente canónica: `metodo-canon/revisa-el-project-plan/references/canon-plan-standard.md` ·
+mantener sincronizada con la copia embebida en `entrevista-prd-a-proyecto` (`generate-claude`) · v1 (2026-06-07).*
