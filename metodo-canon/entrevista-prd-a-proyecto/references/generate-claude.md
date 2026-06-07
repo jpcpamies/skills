@@ -8,11 +8,27 @@ También: copia el `FRAMEWORK_DEV.md` que viene incluido en este skill (carpeta 
 
 Incluye SIEMPRE la §14 (Integraciones externas). Si el PRD (P9) lista integraciones concretas, nómbralas ahí.
 
+## §0 obligatorio — el Canon Plan Standard
+
+Emite SIEMPRE, como **§0** del `CLAUDE.md`, la **copia operativa del Canon Plan Standard**, instanciada a
+**Tier S** (todo proyecto nuevo nace en Tier S). Es la doctrina que gobierna cómo se crea, mantiene y audita
+el `PROJECT_PLAN`: "el plan es la masa", invariantes I1–I7, bindings del repo, tiers S/M/L, plantilla de fase
+única §6, trazabilidad y memorias. Fuente canónica: el `canon-plan-standard.md` de la skill hermana
+`revisa-el-project-plan` (misma familia `metodo-canon`); cópialo como §0 y, si alguna vez la copia y la
+canónica divergen, **manda la canónica**. **Sin este §0**, un plan recién creado no conoce su propio estándar
+de calidad y suspendería su propia auditoría con `revisa-el-project-plan`.
+
 ## Plantilla (rellena los [slots] desde el PRD/DESIGN)
 
 ```markdown
 # CLAUDE.md — [Nombre del Proyecto]
-> Guía unificada: stack, convenciones, ciclo de desarrollo y reglas de IA. Canon Method.
+> Guía unificada: stack, convenciones, ciclo de desarrollo y reglas de IA. Método Canon.
+
+## 0. Canon Plan Standard (doctrina del PROJECT_PLAN)
+[Pega aquí la copia operativa del Canon Plan Standard, instanciada a Tier S. Fuente canónica: el
+`canon-plan-standard.md` de la skill hermana `revisa-el-project-plan` (familia metodo-canon). Gobierna cómo se
+crea, mantiene y audita el plan: "el plan es la masa", invariantes I1–I7, bindings del repo, tiers S/M/L,
+plantilla de fase única §6, trazabilidad y memorias. Si la copia y la canónica divergen, manda la canónica.]
 
 ## 1. Stack Tecnológico
 [Del PRD P12. Ej: React 18 (Vite), TS strict, Tailwind v4, shadcn/ui; backend [Convex|Express+Supabase|Hono+Turso];
@@ -39,7 +55,7 @@ Atomicidad: cada subfase = 1-3 archivos, un objetivo, commiteable sola.
 ### Estado A: No existe PROJECT_PLAN.md
 1. Lee `PRD.md` (y `docs/`: FRAMEWORK_DEV.md, PRODUCT.md, DESIGN.md).
 2. Si falta `docs/FRAMEWORK_DEV.md`, cópialo del `FRAMEWORK_DEV.md` incluido en este skill (carpeta `references/`).
-3. Crea `PROJECT_PLAN.md` siguiendo el Golden Order de FRAMEWORK_DEV.md adaptado al PRD (subfases atómicas).
+3. Crea `PROJECT_PLAN.md` en **Tier S** (un solo archivo conforme al §0/Standard: estado vivo que se lee de un vistazo + mini-log al pie), siguiendo el Golden Order de FRAMEWORK_DEV.md adaptado al PRD, con la **plantilla de fase única (§6)** en cada subfase atómica.
 4. STOP. Espera "OK".
 ### Estado B: existe, sin tareas completadas → lee plan, resume, presenta primera tarea → §8.
 ### Estado C: existe, con tareas completadas → lee plan, reporta estado (fase actual, última/próxima, progreso) → §8.

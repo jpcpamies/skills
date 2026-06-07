@@ -23,9 +23,17 @@ El plan vive en un archivo llamado **`PROJECT_PLAN.md`**, en la **raíz del proy
 
 Esta skill **NO modifica el PRD** ni `PRODUCT.md`, `DESIGN.md`, `CLAUDE.md` ni `FRAMEWORK_DEV.md`. Solo actualiza el `PROJECT_PLAN.md`. Si en algún momento se quiere un reporte global de características, ese se extrae del PRD + el Project Plan + el codebase, no de aquí.
 
+> **Esta skill _conforma_ el Canon Plan Standard.** La plantilla de abajo es la **plantilla de entrada
+> única (§6)** del Standard — la misma en toda la familia, sin dialectos. Y toda inserción respeta el
+> **tier** vigente del plan (§4): en **Tier S** (un solo archivo) la entrada va inline; desde **Tier M/L**
+> una fase *futura* entra como **one-liner en la cola** (su detalle vive en `backlog.md`) y nunca infla el
+> índice por encima de su presupuesto. Si al ubicar el trabajo detectas que el plan se ha pasado de tier,
+> **no lo reorganices aquí**: eso es trabajo de `revisa-el-project-plan`. Doctrina:
+> [`../revisa-el-project-plan/references/canon-plan-standard.md`](../revisa-el-project-plan/references/canon-plan-standard.md).
+
 ## Proceso
 
-1. Explora el repo y **lee el `PROJECT_PLAN.md` de la raíz** para entender el estado: en qué fase estás, qué fases existen, su orden y la lógica de secuenciación. Fíjate en el formato real del archivo (su numeración y su estilo de entrada) para luego escribir igual. Usa el glosario de dominio (*ubiquitous language*) del proyecto en toda la actualización. Localiza y lee el `FRAMEWORK_DEV` del proyecto —normalmente dentro de `docs/`— para conocer las directrices de desarrollo y la lógica de secuenciación de fases, y respétalas, junto con cualquier ADR de la zona que estés tocando.
+1. Explora el repo y **lee el `PROJECT_PLAN.md` de la raíz** para entender el estado: en qué fase estás, qué fases existen, su orden y la lógica de secuenciación. Fíjate en el formato real del archivo (su numeración y su estilo de entrada) para luego escribir igual — son los *bindings* del repo y se respetan, no se sustituyen. Identifica también el **tier** del plan (¿un solo archivo? ¿índice + CHANGELOG? ¿+ `archive/`?) para saber dónde debe caer el detalle de lo que vas a añadir. Usa el glosario de dominio (*ubiquitous language*) del proyecto en toda la actualización. Localiza y lee el `FRAMEWORK_DEV` del proyecto —normalmente dentro de `docs/`— para conocer las directrices de desarrollo y la lógica de secuenciación de fases, y respétalas, junto con cualquier ADR de la zona que estés tocando.
 
 2. Decide la **ubicación** del nuevo trabajo dentro del plan: ¿una fase nueva de nivel superior, o una subfase de una fase existente? Prefiere encajarlo como subfase de una fase existente cuando pertenezca a ella de forma natural; crea una fase nueva solo cuando el trabajo no encaje en ninguna existente. Tanto si es subfase como si es fase nueva, colócala en la posición del plan que mejor siga las directrices de desarrollo del `FRAMEWORK_DEV` (p. ej. backend antes que frontend); no rompas el orden ni las dependencias existentes.
 
