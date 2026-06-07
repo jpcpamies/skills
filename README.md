@@ -11,28 +11,42 @@ creación de contenido y productividad.
 /reload-plugins
 ```
 
-> Sustituye `jpcpamies/skills` por tu `usuario/repo` real cuando lo publiques.
-
 ## Skills incluidas
 
 | Skill | Categoría | Qué hace |
 |-------|-----------|----------|
-| `linkedin-ghostwriter` | contenido | Genera posts de LinkedIn de alto engagement. Personalízalo copiando `references/perfil-template.md` a `references/perfil.md`. |
-| `transcripcion-depurada` | contenido | Depura transcripciones de voz a texto (Wispr, Whisper, cualquier STT). |
-| `canon-method` | producto | Planificación full-stack de apps para desarrollo con IA (Validate → PRD → Design). |
-| `prd-interview` | producto | Entrevista estructurada para convertir una idea de app en un PRD. |
-| `master-prompt-craft` | prompting | Genera master prompts en formato C.R.A.F.T. |
-| `asistente-de-investigacion` | investigacion | Flujo de investigación científica con evidencia Q1 (Consensus, NotebookLM). |
+| `redactor-linkedin` | contenido | Ghostwriter de LinkedIn: posts de alto engagement con neuropsicología, estructura signature y escaneo de privacidad. |
+| `transcripcion-depurada` | contenido | Depura transcripciones de voz a texto (Wispr, Whisper, cualquier STT); identifica y separa hablantes. |
+| `entrevista-prd-a-proyecto` | metodo-canon | **Génesis del Método Canon** (Cowork): entrevista Validate → PRD → Design y genera los 5 documentos de gobierno. |
+| `anade-esto-al-project-plan` | metodo-canon | **Método Canon** (Claude Code): ubica el trabajo ya diseñado en el `PROJECT_PLAN.md` (plantilla única + consciencia de tier). |
+| `revisa-el-project-plan` | metodo-canon | **Método Canon** (Claude Code): audita la salud del `PROJECT_PLAN.md` contra el Canon Plan Standard y lo sanea con tu OK. |
+| `prompt-maestro-craft` | prompting | Genera master prompts en formato C.R.A.F.T. (Contexto, Rol, Acción, Formato, Target). |
+| `investigacion-cientifica` | investigacion | Flujo de investigación científica con evidencia Q1 (Consensus.app, NotebookLM). |
+| `conocimiento-youtube` | base-de-conocimiento | Descarga incremental de transcripciones de canales/playlists de YouTube → base de conocimiento (.txt + unified.md + registry.json). |
+
+> **Método Canon** es una *familia* de tres skills que cubren el ciclo idea→deploy a través de dos
+> superficies (Cowork → Claude Code), unidas por el **Canon Plan Standard**. Ver
+> [`metodo-canon/METODO_CANON.md`](metodo-canon/METODO_CANON.md). El skill `grill-me` que el método usa en
+> el build loop es una dependencia externa (Matt Pocock) y **no** se distribuye aquí; su patrón va integrado
+> en la génesis. En `metodo-canon/descatalogados/` se conserva `entrevista-prd` (track No-Code anterior), no
+> registrado en el plugin.
 
 ## Estructura
-Las skills viven en carpetas de **categoría en la raíz del repo** (no hay carpeta
-`skills/` intermedia). Cada skill se registra explícitamente en `plugin.json`.
+Las skills viven en carpetas de **categoría en la raíz del repo** (no hay carpeta `skills/`
+intermedia). Cada skill se registra explícitamente en `.claude-plugin/plugin.json`.
 
 ```
 skills/
 ├── .claude-plugin/{plugin.json, marketplace.json}
 ├── contenido/
-│   └── linkedin-ghostwriter/{SKILL.md, references/}
+│   ├── redactor-linkedin/{SKILL.md, references/}
+│   └── transcripcion-depurada/SKILL.md
+├── metodo-canon/
+│   ├── METODO_CANON.md             (doc de la familia)
+│   ├── entrevista-prd-a-proyecto/  (génesis · Cowork)
+│   ├── anade-esto-al-project-plan/ (ubica · Claude Code)
+│   ├── revisa-el-project-plan/     (audita · Claude Code · + Canon Plan Standard)
+│   └── descatalogados/             (no registrados)
 └── <otra-categoría>/<otra-skill>/SKILL.md
 ```
 
