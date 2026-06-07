@@ -9,3 +9,6 @@ Thumbs.db
 .idea/
 *.log
 *.tmp
+
+# Exports empaquetados de skills (artefactos, no fuente)
+*.zip
