@@ -20,12 +20,15 @@ creación de contenido y productividad.
 | `entrevista-prd-a-proyecto` | metodo-canon | **Génesis del Método Canon** (Cowork): entrevista Validate → PRD → Design y genera los 5 documentos de gobierno. |
 | `anade-esto-al-project-plan` | metodo-canon | **Método Canon** (Claude Code): ubica el trabajo ya diseñado en el `PROJECT_PLAN.md` (plantilla única + consciencia de tier). |
 | `revisa-el-project-plan` | metodo-canon | **Método Canon** (Claude Code): audita la salud del `PROJECT_PLAN.md` contra el Canon Plan Standard y lo sanea con tu OK. |
+| `project-plan-gitgraph` | metodo-canon | **Método Canon** (Cowork): visualiza el `PROJECT_PLAN.md` como un diagrama Mermaid `gitGraph` (hecho vs. lo que queda), validado y renderizado en un artefacto. |
 | `prompt-maestro-craft` | prompting | Genera master prompts en formato C.R.A.F.T. (Contexto, Rol, Acción, Formato, Target). |
 | `investigacion-cientifica` | investigacion | Flujo de investigación científica con evidencia Q1 (Consensus.app, NotebookLM). |
 | `conocimiento-youtube` | base-de-conocimiento | Descarga incremental de transcripciones de canales/playlists de YouTube → base de conocimiento (.txt + unified.md + registry.json). |
 
-> **Método Canon** es una *familia* de tres skills que cubren el ciclo idea→deploy a través de dos
-> superficies (Cowork → Claude Code), unidas por el **Canon Plan Standard**. Ver
+> **Método Canon** es una *familia* de skills que cubren el ciclo idea→deploy a través de dos
+> superficies (Cowork → Claude Code), unidas por el **Canon Plan Standard**: tres skills de ciclo
+> (`entrevista-prd-a-proyecto`, `anade-esto-al-project-plan`, `revisa-el-project-plan`) más
+> `project-plan-gitgraph`, que **visualiza** el plan como un `gitGraph`. Ver
 > [`metodo-canon/METODO_CANON.md`](metodo-canon/METODO_CANON.md). El skill `grill-me` que el método usa en
 > el build loop es una dependencia externa (Matt Pocock) y **no** se distribuye aquí; su patrón va integrado
 > en la génesis. En `metodo-canon/descatalogados/` se conserva `entrevista-prd` (track No-Code anterior), no
@@ -46,6 +49,7 @@ skills/
 │   ├── entrevista-prd-a-proyecto/  (génesis · Cowork)
 │   ├── anade-esto-al-project-plan/ (ubica · Claude Code)
 │   ├── revisa-el-project-plan/     (audita · Claude Code · + Canon Plan Standard)
+│   ├── project-plan-gitgraph/      (visualiza · Cowork · gitGraph del plan)
 │   └── descatalogados/             (no registrados)
 └── <otra-categoría>/<otra-skill>/SKILL.md
 ```
