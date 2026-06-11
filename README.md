@@ -20,6 +20,7 @@ creación de contenido y productividad.
 | `entrevista-prd-a-proyecto` | metodo-canon | **Génesis del Método Canon** (Cowork): entrevista Validate → PRD → Design y genera los 5 documentos de gobierno. |
 | `anade-esto-al-project-plan` | metodo-canon | **Método Canon** (Claude Code): ubica el trabajo ya diseñado en el `PROJECT_PLAN.md` (plantilla única + consciencia de tier). |
 | `revisa-el-project-plan` | metodo-canon | **Método Canon** (Claude Code): audita la salud del `PROJECT_PLAN.md` contra el Canon Plan Standard y lo sanea con tu OK. |
+| `auditar-proyecto` | metodo-canon | **Método Canon** (Claude Code): auditoría senior de código + seguridad + coherencia plan↔código de cualquier repo; entrega un reporte priorizado y un backlog accionable. Read-only. |
 | `project-plan-gitgraph` | metodo-canon | **Método Canon** (Cowork): visualiza el `PROJECT_PLAN.md` como un diagrama Mermaid `gitGraph` (hecho vs. lo que queda), validado y renderizado en un artefacto. |
 | `prompt-maestro-craft` | prompting | Genera master prompts en formato C.R.A.F.T. (Contexto, Rol, Acción, Formato, Target). |
 | `investigacion-cientifica` | investigacion | Flujo de investigación científica con evidencia Q1 (Consensus.app, NotebookLM). |
@@ -27,7 +28,8 @@ creación de contenido y productividad.
 
 > **Método Canon** es una *familia* de skills que cubren el ciclo idea→deploy a través de dos
 > superficies (Cowork → Claude Code), unidas por el **Canon Plan Standard**: tres skills de ciclo
-> (`entrevista-prd-a-proyecto`, `anade-esto-al-project-plan`, `revisa-el-project-plan`) más
+> (`entrevista-prd-a-proyecto`, `anade-esto-al-project-plan`, `revisa-el-project-plan`),
+> `auditar-proyecto`, que **audita** el código y su coherencia con el plan, y
 > `project-plan-gitgraph`, que **visualiza** el plan como un `gitGraph`. Ver
 > [`metodo-canon/METODO_CANON.md`](metodo-canon/METODO_CANON.md). El skill `grill-me` que el método usa en
 > el build loop es una dependencia externa (Matt Pocock) y **no** se distribuye aquí; su patrón va integrado
@@ -48,7 +50,8 @@ skills/
 │   ├── METODO_CANON.md             (doc de la familia)
 │   ├── entrevista-prd-a-proyecto/  (génesis · Cowork)
 │   ├── anade-esto-al-project-plan/ (ubica · Claude Code)
-│   ├── revisa-el-project-plan/     (audita · Claude Code · + Canon Plan Standard)
+│   ├── revisa-el-project-plan/     (audita el plan · Claude Code · + Canon Plan Standard)
+│   ├── auditar-proyecto/           (audita el código · Claude Code · seguridad + coherencia plan↔código)
 │   ├── project-plan-gitgraph/      (visualiza · Cowork · gitGraph del plan)
 │   └── descatalogados/             (no registrados)
 └── <otra-categoría>/<otra-skill>/SKILL.md
