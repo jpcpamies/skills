@@ -70,7 +70,7 @@ construye). Ambas viajan dentro de los documentos que la génesis genera, así q
 | **diseño** | `grill-me` *(externo · Pocock)* | Claude Code | Interroga el diseño de una feature hasta resolver cada rama del árbol de decisión. | feature difusa → diseño cerrado |
 | **ubica** | `anade-esto-al-project-plan` | Claude Code | Coloca el trabajo ya diseñado en el plan (fase nueva o sub-fase), respetando el orden. | contexto de feature → entrada en `PROJECT_PLAN.md` |
 | **audita** | `revisa-el-project-plan` | Claude Code | Audita la salud del plan contra el Standard y lo sanea (con autorización). | plan → `AUDIT_PROJECT_PLAN.md` + reencauce |
-| **visualiza** | `project-plan-gitgraph` | Cowork | Convierte el plan en un diagrama Mermaid `gitGraph` (hecho vs. roadmap), validado y renderizado. | `PROJECT_PLAN.md` → `git-graph.mermaid` + render |
+| **visualiza** | `project-plan-gitgraph` | Claude Code | Convierte el plan en un diagrama Mermaid `gitGraph` con el **estado por color** (verde cerrado · rojo NEXT · naranja por hacer · gris descartado), validado con el parser real. | `PROJECT_PLAN.md` → `git-graph.mermaid` (solo el archivo; lo pegas en mermaid.live) |
 
 > **`project-plan-gitgraph` es la *vista* de la familia, no un paso del ciclo.** No edita el plan ni
 > impone doctrina: lo *lee* (o lo infiere del historial de git si no hay documento formal) y lo pinta
@@ -193,7 +193,7 @@ produce los 5 documentos markdown que gobiernan un desarrollo full-stack en Clau
 - ✅ Patrón grill-me integrado en la génesis (auto-resolución desde la KB · incansable · árbol 1-a-1
   con recomendación).
 - ✅ Etiqueta de familia `[Superficie · Método Canon]` al inicio de cada `description`.
-- ✅ Añadida la *vista* de la familia: `project-plan-gitgraph` (Cowork · gitGraph del plan).
+- ✅ Añadida la *vista* de la familia: `project-plan-gitgraph` (Claude Code · gitGraph del plan con estado por color).
 - ⏳ `revisa-el-project-plan` — `SKILL.md` auditor en construcción sobre el Standard.
 - ⏳ Alineación al Standard de `anade-esto-al-project-plan` (plantilla única §6 + consciencia de tier)
   y de `generate-claude` (emitir el Standard como `CLAUDE.md §0` + crear el plan en Tier S).

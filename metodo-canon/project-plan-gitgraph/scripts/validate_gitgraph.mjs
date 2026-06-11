@@ -1,6 +1,7 @@
-// Valida que un diagrama Mermaid gitGraph compila.
+// Valida que un diagrama Mermaid gitGraph compila (y avisa si falta el bloque de color).
 // Uso:  node validate_gitgraph.mjs <archivo.mermaid>
-// Para la validación completa instala el parser real una vez:  npm i @mermaid-js/parser
+// Para la validación completa instala el parser real UNA VEZ en la carpeta de este skill
+// (no en el repo del usuario; aquí hay un .gitignore para node_modules):  npm i @mermaid-js/parser
 // Exit code 0 = OK | 1 = NO COMPILA | 2 = error de uso.
 import fs from 'fs';
 
@@ -18,10 +19,17 @@ if (/^﻿?\s*```/.test(text)) {
   problems.push('El archivo empieza con ``` (valla de código). Quita las líneas de triple comilla: rompen mermaid.live con "Lexer error on line 1, column 1".');
 }
 
-// 2) quitar front matter para los chequeos estructurales
+// 2) bloque de color obligatorio en este skill (estado por color: git0..gitN)
+const hasInit = /%%\{\s*init\s*:/.test(text);
+const hasGit0 = /['"]git0['"]\s*:/.test(text);
+if (!hasInit || !hasGit0) {
+  warns.push('Falta el bloque de color %%{init: {theme:base, themeVariables:{git0..gitN}}}%%. Este skill exige codificar el ESTADO POR COLOR (verde=cerrado, rojo=NEXT, naranja=por hacer, gris=descartado). El grafo compila igual, pero no cumple la convención.');
+}
+
+// 3) quitar front matter para los chequeos estructurales
 const body = text.replace(/^﻿?---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
 
-// 3) heurísticas línea a línea
+// 4) heurísticas línea a línea
 const lines = body.split(/\r?\n/);
 let started = false;
 const ids = [];
@@ -53,7 +61,7 @@ const dup = ids.filter((id, i) => ids.indexOf(id) !== i);
 if (dup.length) problems.push('ids de commit duplicados (Mermaid los exige únicos): ' + [...new Set(dup)].join(' | '));
 checkouts.forEach(c => { if (!branches.includes(c.b)) problems.push(`L${c.l}: checkout a una rama no declarada "${c.b}"`); });
 
-// 4) parser real de Mermaid (si está instalado)
+// 5) parser real de Mermaid (si está instalado)
 let parser = 'no-ejecutado';
 try {
   const mod = await import('@mermaid-js/parser');
