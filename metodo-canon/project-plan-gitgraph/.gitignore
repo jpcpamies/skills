@@ -1,5 +1,0 @@
-# El validador instala aquí @mermaid-js/parser para correr el parser real.
-# No se commitea: cada superficie lo reinstala bajo demanda.
-node_modules/
-package.json
-package-lock.json

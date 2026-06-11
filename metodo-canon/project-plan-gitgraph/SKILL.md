@@ -80,7 +80,7 @@ Prioridad/bloqueo (`P0`, `bloquea go-live`) va **dentro** del tag.
 
 ### 6. Sintaxis segura
 
-(Detalle y ejemplo completo validado en `reference/conventions.md`.)
+(Detalle y ejemplo completo validado en `references/conventions.md`.)
 
 - `id` siempre **entre comillas** y **único en todo el grafo** (Mermaid lo exige).
 - `type:` va **antes** de `tag:`.
@@ -91,20 +91,13 @@ Prioridad/bloqueo (`P0`, `bloquea go-live`) va **dentro** del tag.
 
 ### 7. VALIDAR (obligatorio, antes de entregar)
 
-El validador instala el parser **en la carpeta del propio skill**, no en el repo del usuario, así no contamina su proyecto (la carpeta del skill tiene su `.gitignore`):
+Una sola orden. El script **se autoinstala** el parser en un directorio temporal del SO (`os.tmpdir()/mermaid-gitgraph-validator`) la primera vez; **nunca** instala nada dentro de la carpeta del skill:
 
 ```
-SKILL_DIR="$(cd "$(dirname "$0")/.." && pwd)"   # o la ruta de esta skill
-( cd "$SKILL_DIR" && npm i @mermaid-js/parser >/dev/null 2>&1 )
-node "$SKILL_DIR/scripts/validate_gitgraph.mjs" <ruta-al-archivo>.mermaid
+node <ruta-de-esta-skill>/scripts/validate_gitgraph.mjs <ruta-absoluta-al-archivo>.mermaid
 ```
 
-En la práctica, desde la carpeta del skill:
-
-```
-cd <ruta-de-esta-skill> && npm i @mermaid-js/parser >/dev/null 2>&1
-node scripts/validate_gitgraph.mjs <ruta-absoluta-al-archivo>.mermaid
-```
+> **No corras `npm i` dentro de la carpeta del skill.** Si lo haces, deja un `node_modules/` que rompe el zip de subida a la superficie (rutas con caracteres inválidos). La carpeta del skill debe quedar **siempre limpia** (solo `SKILL.md`, `references/`, `scripts/`) para que "botón derecho → Comprimir" produzca un `.zip` válido.
 
 El validador corre heurísticas (fence ```, ids duplicados, comillas sin cerrar, `checkout` a ramas inexistentes, falta del bloque de color) **y** el parser real de Mermaid. Si sale `NO COMPILA`, lee la línea/columna del error, corrige y repite. **No entregues nada con exit code ≠ 0.**
 

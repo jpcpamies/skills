@@ -1,9 +1,17 @@
 // Valida que un diagrama Mermaid gitGraph compila (y avisa si falta el bloque de color).
 // Uso:  node validate_gitgraph.mjs <archivo.mermaid>
-// Para la validación completa instala el parser real UNA VEZ en la carpeta de este skill
-// (no en el repo del usuario; aquí hay un .gitignore para node_modules):  npm i @mermaid-js/parser
+//
+// NO ENSUCIA LA CARPETA DEL SKILL. El parser real (@mermaid-js/parser) se instala en un
+// directorio TEMPORAL del SO (os.tmpdir()/mermaid-gitgraph-validator), nunca aquí. Así la
+// carpeta del skill queda siempre limpia y "botón derecho > Comprimir" produce un .zip
+// válido para subir a la superficie (sin node_modules ni paths con caracteres inválidos).
+//
 // Exit code 0 = OK | 1 = NO COMPILA | 2 = error de uso.
-import fs from 'fs';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { execSync } from 'node:child_process';
+import { pathToFileURL } from 'node:url';
 
 const file = process.argv[2];
 if (!file) { console.error('uso: node validate_gitgraph.mjs <archivo.mermaid>'); process.exit(2); }
@@ -61,10 +69,26 @@ const dup = ids.filter((id, i) => ids.indexOf(id) !== i);
 if (dup.length) problems.push('ids de commit duplicados (Mermaid los exige únicos): ' + [...new Set(dup)].join(' | '));
 checkouts.forEach(c => { if (!branches.includes(c.b)) problems.push(`L${c.l}: checkout a una rama no declarada "${c.b}"`); });
 
-// 5) parser real de Mermaid (si está instalado)
+// 5) parser real de Mermaid — instalado en un dir TEMPORAL del SO, NO en la carpeta del skill.
+async function loadParser() {
+  const scratch = path.join(os.tmpdir(), 'mermaid-gitgraph-validator');
+  const pkgDir = path.join(scratch, 'node_modules', '@mermaid-js', 'parser');
+  const pkgJson = path.join(pkgDir, 'package.json');
+  if (!fs.existsSync(pkgJson)) {
+    fs.mkdirSync(scratch, { recursive: true });
+    // Instala en el scratch temporal (cwd = scratch), nunca en la carpeta del skill.
+    execSync('npm i @mermaid-js/parser --no-audit --no-fund --silent', { cwd: scratch, stdio: 'ignore' });
+  }
+  const meta = JSON.parse(fs.readFileSync(pkgJson, 'utf8'));
+  const dot = (meta.exports && meta.exports['.']) || {};
+  const entry = dot.import || dot.default || meta.module || meta.main;
+  if (!entry) throw new Error('no se pudo resolver el entry de @mermaid-js/parser');
+  return import(pathToFileURL(path.join(pkgDir, entry)).href);
+}
+
 let parser = 'no-ejecutado';
 try {
-  const mod = await import('@mermaid-js/parser');
+  const mod = await loadParser();
   try {
     const r = await mod.parse('gitGraph', body);
     const errs = [...((r && r.lexerErrors) || []), ...((r && r.parserErrors) || [])];
@@ -75,8 +99,8 @@ try {
     problems.push('parser: ' + ((e && e.message) || String(e)).split('\n').slice(0, 5).join(' | '));
   }
 } catch (e) {
-  parser = 'no-instalado';
-  warns.push('Parser real no disponible. Validación completa: "npm i @mermaid-js/parser" en el sandbox. Por ahora solo heurísticas.');
+  parser = 'no-disponible';
+  warns.push('Parser real no disponible (sin red o sin npm). Se instala solo en ' + path.join(os.tmpdir(), 'mermaid-gitgraph-validator') + ' la primera vez. Por ahora solo heurísticas.');
 }
 
 console.log(`commits: ${ids.length} | ramas: ${[...new Set(branches)].join(',')} | HIGHLIGHT: ${(body.match(/type:\s*HIGHLIGHT/g) || []).length} | parser: ${parser}`);
