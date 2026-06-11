@@ -25,6 +25,7 @@ creación de contenido y productividad.
 | `prompt-maestro-craft` | prompting | Genera master prompts en formato C.R.A.F.T. (Contexto, Rol, Acción, Formato, Target). |
 | `investigacion-cientifica` | investigacion | Flujo de investigación científica con evidencia Q1 (Consensus.app, NotebookLM). |
 | `conocimiento-youtube` | base-de-conocimiento | Descarga incremental de transcripciones de canales/playlists de YouTube → base de conocimiento (.txt + unified.md + registry.json). |
+| `actualiza-los-skills` | productividad | **Deploy de este repo**: registra en el manifest las skills nuevas, recoloca las sueltas (preguntando), mantiene el README en sync y **sube la versión** del plugin para que las superficies detecten el cambio; luego commit + permiso para push. |
 
 > **Método Canon** es una *familia* de skills que cubren el ciclo idea→deploy a través de dos
 > superficies (Cowork → Claude Code), unidas por el **Canon Plan Standard**: tres skills de ciclo
@@ -54,6 +55,8 @@ skills/
 │   ├── auditar-proyecto/           (audita el código · Claude Code · seguridad + coherencia plan↔código)
 │   ├── project-plan-gitgraph/      (visualiza · Cowork · gitGraph del plan)
 │   └── descatalogados/             (no registrados)
+├── productividad/
+│   └── actualiza-los-skills/       (deploy · mantiene este repo + sube la versión del plugin)
 └── <otra-categoría>/<otra-skill>/SKILL.md
 ```
 
