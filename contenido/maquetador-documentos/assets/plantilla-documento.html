@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="plantilla-base.css">
+<style>
+  /* Footer por documento: sobreescribe el contenido del pie de plantilla-base.css.
+     (El @page de la hoja base lleva placeholders "Marca"/"Tagline"; aquí los fijas.) */
+  @page{
+    @bottom-left{ content:"Atelier Nord"; }
+    @bottom-center{ content:"donde la idea toma forma"; }
+  }
+  /* Wordmark de la portada (específico de marca; en producción puede ser un PNG recortado). */
+  .wordmark{ font-family:var(--serif); font-weight:500; color:var(--ink);
+    font-size:23pt; letter-spacing:.34em; text-transform:uppercase; margin:1mm 0 0; }
+</style>
+</head>
+<body>
+
+<!-- ===== PORTADA · masthead con emblema SVG inline (sin imagen externa) ===== -->
+<div class="masthead">
+  <svg viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg" fill="none"
+       stroke="var(--accent)" stroke-width="1.1" stroke-linecap="round">
+    <circle cx="60" cy="34" r="13"/>
+    <line x1="60" y1="8"  x2="60" y2="16"/>
+    <line x1="60" y1="52" x2="60" y2="60"/>
+    <line x1="34" y1="34" x2="42" y2="34"/>
+    <line x1="78" y1="34" x2="86" y2="34"/>
+    <line x1="42" y1="16" x2="47" y2="21"/>
+    <line x1="73" y1="47" x2="78" y2="52"/>
+    <line x1="78" y1="16" x2="73" y2="21"/>
+    <line x1="47" y1="47" x2="42" y2="52"/>
+    <line x1="20" y1="64" x2="100" y2="64" stroke="var(--accent-faint)"/>
+  </svg>
+  <div class="wordmark">Atelier&nbsp;Nord</div>
+  <div class="brandline">Diseño &nbsp;·&nbsp; Marca &nbsp;·&nbsp; Producto</div>
+  <div class="brandtag">Donde la idea toma forma</div>
+</div>
+
+<hr class="rule-center">
+
+<p class="eyebrow">Propuesta de colaboración &nbsp;·&nbsp; Plantilla de demostración</p>
+<h1 class="doc-title">Un documento con<br>acabado editorial</h1>
+
+<p class="meta">
+  <b>Formato</b> A4 vertical <span class="sep">·</span>
+  <b>Motor</b> HTML + CSS → WeasyPrint <span class="sep">·</span>
+  <b>Identidad</b> 5 tonos + 2 fuentes
+</p>
+
+<p class="lead">
+  Esta página de ejemplo existe para una cosa: <span class="em">enseñar todos los componentes a la vez.</span>
+  Cambia los cinco tonos y la pareja tipográfica del <code>:root</code>, sustituye el emblema por el logo de
+  la marca, y este mismo esqueleto vale para una propuesta, un informe, un dossier o un one-pager. Lo que
+  hace que parezca caro no es ningún truco: es la coherencia y el bucle de revisión visual.
+</p>
+
+<div class="toc">
+  <div class="toc-item"><div class="code">A</div><div class="name">Alcance del trabajo <span>· qué se entrega</span></div></div>
+  <div class="toc-item"><div class="code">B</div><div class="name">Metodología <span>· cómo se trabaja</span></div></div>
+  <div class="toc-item"><div class="code">C</div><div class="name">Inversión <span>· desglose y opciones</span></div></div>
+</div>
+
+<!-- ===== Bloque con letra gigante + partidas ===== -->
+<div class="block">
+  <div class="block-head">
+    <div class="block-letter">A</div>
+    <div class="ht">
+      <div class="kicker">Bloque A</div>
+      <h2>Alcance del trabajo</h2>
+      <p class="intro">Lo que se monta y lo que el cliente se lleva, pieza por pieza.</p>
+    </div>
+  </div>
+  <div class="partidas">
+    <div class="partida"><div class="pc">A.1</div><div class="pt"><b>Identidad visual.</b> <span class="d">Paleta, tipografía, logo y sistema de componentes listos para usar.</span></div></div>
+    <div class="partida"><div class="pc">A.2</div><div class="pt"><b>Sistema de documentos.</b> <span class="d">Plantilla maestra y variantes (propuesta, informe, dossier). <span class="tag">Incluido</span></span></div></div>
+    <div class="partida"><div class="pc">A.3</div><div class="pt"><b>Guía de uso.</b> <span class="d">Cómo recomponer el sistema para piezas futuras. <span class="tag ghost">Opcional</span></span></div></div>
+  </div>
+  <div class="pq">La coherencia es lo que se percibe como calidad.</div>
+</div>
+
+<!-- ===== Sección numerada + tabla de precio ===== -->
+<p class="sec-eyebrow">Sección 1</p>
+<h2 class="sec">Inversión — desglose</h2>
+<hr class="sec-rule">
+
+<table class="price">
+  <thead><tr><th>Cód.</th><th>Concepto</th><th>€</th></tr></thead>
+  <tbody>
+    <tr><td>A.1</td><td>Identidad visual y tokens de marca</td><td>1.200</td></tr>
+    <tr><td>A.2</td><td>Sistema de documentos (plantilla + variantes)</td><td>900</td></tr>
+    <tr><td>A.3</td><td>Guía de uso y traspaso</td><td>400</td></tr>
+    <tr class="subtotal"><td></td><td><b>Subtotal</b></td><td><b>2.500</b></td></tr>
+    <tr class="grand"><td></td><td><b>TOTAL VALOR DESGLOSADO</b></td><td><b>2.500 €</b></td></tr>
+  </tbody>
+</table>
+
+<!-- ===== Comparativa con columna destacada ===== -->
+<table class="grid">
+  <thead><tr><th>&nbsp;</th><th>Básico</th><th class="colstar">Completo ★</th><th>Premium</th></tr></thead>
+  <tbody>
+    <tr><td>Precio</td><td>990 €</td><td class="colstar">1.490 €</td><td>1.990 €</td></tr>
+    <tr><td>Identidad visual</td><td class="yes">✓</td><td class="colstar yes">✓</td><td class="yes">✓</td></tr>
+    <tr><td>Sistema de documentos</td><td class="no">—</td><td class="colstar yes">✓</td><td class="yes">✓</td></tr>
+    <tr><td>Guía de uso</td><td class="no">—</td><td class="colstar no">—</td><td class="yes">✓</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== Tarjetas de opción (una destacada) + salto ===== -->
+<div class="tier">
+  <div class="th"><div class="tn">Básico</div><div class="tp">990 €<small>≈ 330 € × 3</small></div></div>
+  <p class="who">Para empezar con la identidad esencial.</p>
+  <ul><li>Identidad visual completa</li></ul>
+  <p class="savings">Valor desglosado: <b>1.200 €</b> → ahorro del <b>18 %</b></p>
+</div>
+<div class="tier star">
+  <div class="th"><div class="tn">Completo <span class="badge">Recomendado</span></div><div class="tp">1.490 €<small>≈ 497 € × 3</small></div></div>
+  <p class="who">El punto justo: identidad + sistema de documentos listo para producir.</p>
+  <ul>
+    <li>Todo lo del Básico, y además:</li>
+    <li>Sistema de documentos (plantilla + variantes)</li>
+  </ul>
+  <p class="savings">Valor desglosado: <b>2.100 €</b> → ahorro del <b>29 %</b></p>
+</div>
+
+<div class="jump">
+  Por 500 € más que el Completo te llevas la <b>guía de uso y el traspaso</b>: el sistema queda en tus manos
+  para producir piezas nuevas sin depender de nadie.
+</div>
+
+<div class="box">
+  <p class="bt">El número, en perspectiva</p>
+  <p class="big">El Completo son 1.490 € por un sistema que reutilizas para siempre.</p>
+  <p>Menos de lo que cuesta encargar tres piezas sueltas a un estudio — y aquí te queda la plantilla, no solo
+  el resultado.</p>
+</div>
+
+<!-- ===== Rejilla de pago ===== -->
+<p class="sec-eyebrow">Sección 2</p>
+<h2 class="sec">Formas de pago</h2>
+<hr class="sec-rule">
+<div class="pay-grid">
+  <div class="pay-col"><h4>Básico</h4><div class="pp">990 €</div>
+    <div class="pay-row unico"><span>Pago único</span><span>940 €</span></div>
+    <div class="pay-row"><span>3 cuotas</span><span>~330 € × 3</span></div></div>
+  <div class="pay-col star"><h4>Completo</h4><div class="pp">1.490 €</div>
+    <div class="pay-row unico"><span>Pago único</span><span>1.420 €</span></div>
+    <div class="pay-row"><span>3 cuotas</span><span>~497 € × 3</span></div></div>
+  <div class="pay-col"><h4>Premium</h4><div class="pp">1.990 €</div>
+    <div class="pay-row unico"><span>Pago único</span><span>1.890 €</span></div>
+    <div class="pay-row"><span>3 cuotas</span><span>~663 € × 3</span></div></div>
+</div>
+
+<hr class="divider">
+
+<div class="closing">
+  <svg viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg" fill="none"
+       stroke="var(--accent)" stroke-width="1.1" stroke-linecap="round">
+    <circle cx="60" cy="34" r="13"/>
+    <line x1="60" y1="8" x2="60" y2="16"/><line x1="60" y1="52" x2="60" y2="60"/>
+    <line x1="34" y1="34" x2="42" y2="34"/><line x1="78" y1="34" x2="86" y2="34"/>
+  </svg>
+  <p class="signoff">Cambia los tokens, conserva el oficio.</p>
+  <p class="note">Plantilla de demostración · maquetador-documentos · jordipamies-skills</p>
+</div>
+
+</body>
+</html>

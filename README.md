@@ -17,6 +17,7 @@ creación de contenido y productividad.
 |-------|-----------|----------|
 | `redactor-linkedin` | contenido | Ghostwriter de LinkedIn: posts de alto engagement con neuropsicología, estructura signature y escaneo de privacidad. |
 | `transcripcion-depurada` | contenido | Depura transcripciones de voz a texto (Wispr, Whisper, cualquier STT); identifica y separa hablantes. |
+| `maquetador-documentos` | contenido | Convierte contenido que ya tienes en un PDF con **acabado editorial de marca** (HTML/CSS → WeasyPrint): extrae paleta, tipografía y logo de un artefacto, o te **pregunta el estilo** si no hay dirección. Solo maqueta; el contenido lo traes tú. |
 | `entrevista-prd-a-proyecto` | metodo-canon | **Génesis del Método Canon** (Cowork): entrevista Validate → PRD → Design y genera los 5 documentos de gobierno. |
 | `anade-esto-al-project-plan` | metodo-canon | **Método Canon** (Claude Code): ubica el trabajo ya diseñado en el `PROJECT_PLAN.md` (plantilla única + consciencia de tier). |
 | `revisa-el-project-plan` | metodo-canon | **Método Canon** (Claude Code): audita la salud del `PROJECT_PLAN.md` contra el Canon Plan Standard y lo sanea con tu OK. |
@@ -46,7 +47,8 @@ skills/
 ├── .claude-plugin/{plugin.json, marketplace.json}
 ├── contenido/
 │   ├── redactor-linkedin/{SKILL.md, references/}
-│   └── transcripcion-depurada/SKILL.md
+│   ├── transcripcion-depurada/SKILL.md
+│   └── maquetador-documentos/{SKILL.md, references/, assets/, scripts/}
 ├── metodo-canon/
 │   ├── METODO_CANON.md             (doc de la familia)
 │   ├── entrevista-prd-a-proyecto/  (génesis · Cowork)

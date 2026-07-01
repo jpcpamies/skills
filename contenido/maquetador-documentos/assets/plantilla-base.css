@@ -1,0 +1,190 @@
+/* ============================================================
+   PLANTILLA BASE — maquetador-documentos
+   HTML + CSS -> WeasyPrint -> PDF con acabado editorial.
+   Para adaptar a una marca: cambia SOLO los tokens del :root
+   (color + tipografía) y el logo del masthead. La estructura
+   y los componentes se reaprovechan tal cual.
+   Doc de componentes: references/sistema-visual.md
+   ============================================================ */
+
+:root{
+  /* --- LOS 5 TONOS (+ líneas). Cámbialos por identidad. --- */
+  --paper:#FBFAF8;        /* fondo de página */
+  --ink:#1E1B17;          /* títulos, wordmark (el más oscuro) */
+  --body:#3C3A36;         /* texto cuerpo (un punto más suave) */
+  --muted:#8A8478;        /* etiquetas, eyebrow, metadatos */
+  --muted-soft:#A8A293;
+  --accent:#9A7B4F;       /* EL color de marca: filetes, numerales, badges */
+  --accent-faint:#D9CDB8; /* numerales gigantes y fondos suaves del acento */
+  --line:#E6E1D8;         /* filete fino */
+  --line-soft:#F0ECE3;
+  --accent-bg:#F5EFE4;    /* fondo de la columna/tarjeta destacada */
+  /* --- TIPOGRAFÍA. Usa familias disponibles (fc-list). --- */
+  --serif:'Lora', Georgia, 'Times New Roman', serif;
+  --sans:'Poppins', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ---------- Página, pie y numeración ---------- */
+@page{
+  size:A4;                       /* o 'letter'; añade ' landscape' p/ horizontal */
+  margin:18mm 17mm 20mm 17mm;
+  background:var(--paper);
+  @bottom-left{
+    content:"Marca";             /* <-- nombre de marca */
+    font-family:var(--sans); font-size:7pt; font-weight:300;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--muted-soft);
+  }
+  @bottom-center{
+    content:"Tagline de la marca"; /* <-- tagline */
+    font-family:var(--serif); font-style:italic; font-size:7.5pt; color:var(--muted-soft);
+  }
+  @bottom-right{
+    content:counter(page) " / " counter(pages);
+    font-family:var(--sans); font-size:7.5pt; font-weight:300; color:var(--muted-soft);
+  }
+}
+@page:first{ @bottom-left{content:none;} @bottom-center{content:none;} @bottom-right{content:none;} }
+
+*{box-sizing:border-box;}
+body{ background:var(--paper); color:var(--body); font-family:var(--serif);
+  font-size:10.5pt; line-height:1.62; margin:0; }
+
+/* ---------- Masthead (portada) ---------- */
+.masthead{ text-align:center; margin:2mm 0 0; }
+.masthead img{ width:62mm; height:auto; }
+.masthead svg{ width:48mm; height:auto; }
+.brandline{ font-family:var(--sans); font-weight:300; font-size:8pt;
+  letter-spacing:.34em; text-transform:uppercase; color:var(--muted); margin:1mm 0 1.5mm; }
+.brandtag{ font-family:var(--serif); font-style:italic; font-size:10pt; color:var(--ink); margin:0 0 4mm; }
+.rule-center{ width:46mm; height:0; border:0; border-top:1px solid var(--accent); margin:4mm auto; opacity:.85; }
+.rule-center.short{ width:24mm; }
+
+/* ---------- Cabecera de documento ---------- */
+.eyebrow{ font-family:var(--sans); font-weight:400; font-size:8.5pt; letter-spacing:.26em;
+  text-transform:uppercase; color:var(--muted); text-align:center; margin:0 0 3mm; }
+h1.doc-title{ font-family:var(--serif); font-weight:500; color:var(--ink); font-size:25pt;
+  line-height:1.18; text-align:center; margin:0 0 5mm; }
+.meta{ text-align:center; font-family:var(--sans); font-weight:300; font-size:8.7pt; color:var(--body);
+  margin:0 auto 2mm; max-width:150mm; line-height:1.9; }
+.meta b{ font-weight:500; color:var(--ink); }
+.meta .sep{ color:var(--accent); margin:0 2.5mm; }
+.lead{ font-size:11pt; line-height:1.74; color:var(--body); max-width:158mm; margin:6mm auto 2mm; text-align:justify; }
+.lead .em{ color:var(--ink); font-style:italic; }
+
+/* ---------- Índice ---------- */
+.toc{ margin:6mm auto 0; max-width:150mm; }
+.toc-item{ display:flex; align-items:baseline; gap:5mm; padding:2.1mm 0; border-bottom:1px solid var(--line-soft); }
+.toc-item .code{ font-family:var(--sans); font-weight:500; font-size:9pt; color:var(--accent);
+  letter-spacing:.06em; width:7mm; flex:0 0 auto; }
+.toc-item .name{ font-family:var(--serif); font-size:11pt; color:var(--ink); flex:1; }
+.toc-item .name span{ font-family:var(--sans); font-weight:300; font-size:8.5pt; color:var(--muted); }
+
+/* ---------- Bloques de sección ---------- */
+.block{ margin:0; padding:6mm 0 2mm; }
+.block-head{ display:flex; align-items:flex-start; gap:6mm; margin-bottom:2.5mm;
+  border-top:1px solid var(--line); padding-top:5mm; break-after:avoid; }
+.block-letter{ font-family:var(--serif); font-weight:500; font-size:34pt; line-height:.9;
+  color:var(--accent-faint); flex:0 0 auto; width:15mm; text-align:center; }
+.block-head .ht{ flex:1; }
+.block-head .kicker{ font-family:var(--sans); font-weight:400; font-size:8pt; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--muted); margin:1mm 0 1mm; }
+.block-head h2{ font-family:var(--serif); font-weight:500; color:var(--ink); font-size:16.5pt; margin:0 0 1.5mm; line-height:1.15; }
+.block-head .intro{ font-size:10pt; color:var(--body); font-style:italic; margin:0; max-width:150mm; }
+.partidas{ margin:1mm 0 0 21mm; }
+.partida{ display:flex; gap:4mm; padding:1.7mm 0; align-items:baseline; break-inside:avoid; }
+.partida .pc{ font-family:var(--sans); font-weight:500; font-size:8.3pt; color:var(--accent);
+  letter-spacing:.04em; width:8mm; flex:0 0 auto; padding-top:.4mm; }
+.partida .pt{ flex:1; }
+.partida .pt b{ font-family:var(--serif); font-weight:600; color:var(--ink); font-size:10.5pt; }
+.partida .pt .d{ color:var(--body); }
+.tag{ font-family:var(--sans); font-weight:500; font-size:7.4pt; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--paper); background:var(--accent); padding:.5mm 2mm; border-radius:2px; margin-left:1.5mm;
+  white-space:nowrap; vertical-align:1px; }
+.tag.ghost{ background:transparent; color:var(--muted); border:1px solid var(--line); }
+
+/* ---------- Pull quote ---------- */
+.pq{ text-align:center; font-family:var(--serif); font-style:italic; font-size:11.5pt; color:var(--ink);
+  margin:6mm auto; max-width:140mm; }
+.pq::before,.pq::after{ content:""; display:block; width:18mm; height:0; border-top:1px solid var(--accent); margin:3mm auto; }
+
+/* ---------- Encabezado de sección numerada ---------- */
+h2.sec{ font-family:var(--serif); font-weight:500; color:var(--ink); font-size:15.5pt; margin:9mm 0 1mm; padding-bottom:1.5mm; }
+.sec-eyebrow{ font-family:var(--sans); font-weight:400; font-size:8pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); margin:0; }
+.sec-rule{ border:0; border-top:1px solid var(--accent); margin:0 0 4mm; width:30mm; }
+
+/* ---------- Tabla de datos / precio ---------- */
+table{ width:100%; border-collapse:collapse; margin:3mm 0 5mm; font-size:9.6pt; }
+table.price thead th{ font-family:var(--sans); font-weight:500; font-size:8pt; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--ink); text-align:left; border-bottom:1.4px solid var(--accent);
+  padding:2.4mm 3mm; background:transparent; }
+table.price thead th:last-child{ text-align:right; }
+table.price tbody td{ padding:2.2mm 3mm; border-bottom:1px solid var(--line-soft); vertical-align:top; color:var(--body); }
+table.price tbody td:first-child{ font-family:var(--sans); font-weight:500; font-size:8.5pt; color:var(--accent);
+  white-space:nowrap; letter-spacing:.03em; }
+table.price tbody td:last-child{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; color:var(--ink); }
+table.price tbody td b{ color:var(--ink); }
+tr.subtotal td{ border-top:1px solid var(--line); border-bottom:none; background:var(--line-soft); }
+tr.subtotal td b{ font-family:var(--sans); font-weight:600; font-size:9pt; }
+tr.grand td{ border-top:1.6px solid var(--accent); border-bottom:1.6px solid var(--accent); }
+tr.grand td b{ font-family:var(--sans); font-weight:600; font-size:10.5pt; letter-spacing:.04em; color:var(--ink); }
+
+/* ---------- Tabla comparativa (columna destacada) ---------- */
+table.grid{ width:100%; border-collapse:collapse; margin:3mm 0 4mm; font-size:9.2pt; }
+table.grid th, table.grid td{ padding:2.3mm 2.6mm; border-bottom:1px solid var(--line-soft); }
+table.grid thead th{ font-family:var(--sans); font-weight:500; font-size:8.4pt; text-align:center; color:var(--ink);
+  border-bottom:1.4px solid var(--accent); }
+table.grid thead th:first-child{ text-align:left; }
+table.grid tbody td{ text-align:center; color:var(--body); }
+table.grid tbody td:first-child{ text-align:left; font-size:8.9pt; }
+table.grid .lvl{ font-family:var(--serif); font-weight:600; color:var(--ink); }
+table.grid .price{ font-family:var(--serif); font-weight:600; font-size:12pt; color:var(--ink); }
+table.grid .yes{ color:var(--accent); font-weight:700; }
+table.grid .no{ color:var(--muted-soft); }
+table.grid td.colstar, table.grid th.colstar{ background:var(--accent-bg); }
+
+/* ---------- Tarjetas de nivel / opción ---------- */
+.tier{ break-inside:avoid; border:1px solid var(--line); border-radius:4px; padding:5mm 6mm; margin:4mm 0; background:#FFFFFF; }
+.tier.star{ border:1.5px solid var(--accent); background:var(--accent-bg); }
+.tier .th{ display:flex; justify-content:space-between; align-items:baseline; gap:6mm;
+  border-bottom:1px solid var(--line); padding-bottom:2.5mm; margin-bottom:2.5mm; }
+.tier .tn{ font-family:var(--serif); font-weight:600; font-size:15pt; color:var(--ink); }
+.tier .tn .badge{ font-family:var(--sans); font-weight:500; font-size:7pt; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--paper); background:var(--accent); padding:.6mm 2.2mm; border-radius:2px; margin-left:2mm; vertical-align:2px; }
+.tier .tp{ font-family:var(--serif); font-weight:600; font-size:19pt; color:var(--ink); white-space:nowrap; }
+.tier .tp small{ font-family:var(--sans); font-weight:300; font-size:8pt; color:var(--muted); display:block; text-align:right; }
+.tier .who{ font-style:italic; color:var(--body); font-size:9.7pt; margin:0 0 2mm; }
+.tier ul{ margin:1mm 0 0; padding:0 0 0 5mm; }
+.tier li{ margin:.9mm 0; font-size:9.7pt; color:var(--body); }
+.tier li::marker{ color:var(--accent); }
+.tier .savings{ font-family:var(--sans); font-size:8.2pt; color:var(--muted); margin-top:2.5mm; }
+.tier .savings b{ color:var(--ink); font-weight:600; }
+
+/* ---------- Salto / decoy ---------- */
+.jump{ background:var(--accent-bg); border-left:2px solid var(--accent); padding:3.5mm 5mm; margin:3mm 0 5mm;
+  font-style:italic; color:var(--ink); font-size:10pt; border-radius:0 3px 3px 0; }
+
+/* ---------- Cajas suaves ---------- */
+.box{ border:1px solid var(--line); border-radius:4px; padding:4.5mm 5.5mm; margin:4mm 0; background:#FFFFFF; break-inside:avoid; }
+.box .bt{ font-family:var(--sans); font-weight:500; font-size:8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin:0 0 2mm; }
+.box p{ margin:1.5mm 0; }
+.box .big{ font-family:var(--serif); font-size:13pt; color:var(--ink); }
+
+/* ---------- Rejilla de pago (flex, no grid) ---------- */
+.pay-grid{ display:flex; gap:4mm; margin:3mm 0; }
+.pay-col{ flex:1; border:1px solid var(--line); border-radius:4px; padding:3.5mm 4mm; background:#FFFFFF; break-inside:avoid; }
+.pay-col.star{ border:1.5px solid var(--accent); background:var(--accent-bg); }
+.pay-col h4{ font-family:var(--serif); font-weight:600; font-size:11pt; color:var(--ink); margin:0 0 1mm; }
+.pay-col .pp{ font-family:var(--sans); font-size:7.6pt; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin:0 0 2.5mm; }
+.pay-row{ display:flex; justify-content:space-between; font-size:9pt; padding:1.3mm 0; border-top:1px solid var(--line-soft); }
+.pay-row span:first-child{ color:var(--body); }
+.pay-row span:last-child{ color:var(--ink); font-variant-numeric:tabular-nums; }
+.pay-row.unico span:last-child{ font-weight:600; }
+
+/* ---------- Cierre ---------- */
+.closing{ text-align:center; margin:9mm auto 0; max-width:150mm; }
+.closing img{ width:26mm; height:auto; margin:2mm 0; }
+.closing svg{ width:22mm; height:auto; margin:2mm 0; }
+.closing p{ font-size:10.3pt; color:var(--body); }
+.signoff{ font-family:var(--serif); font-style:italic; font-size:11pt; color:var(--ink); }
+.note{ font-family:var(--sans); font-weight:300; font-size:8pt; color:var(--muted-soft); text-align:center; margin-top:6mm; }
+.divider{ border:0; border-top:1px solid var(--line); margin:7mm 0; }
