@@ -51,7 +51,7 @@ En **Claude Code** se construye y se mantiene (donde vive el código).
 └─────────────────────────────────────┘     └──────────────────────────────────────────────────────────┘
 ```
 
-> En el diagrama, `añade` = `anade-esto-al-project-plan`, `revisa` = `revisa-el-project-plan`, y
+> En el diagrama, `añade` = `anade-esto-al-project-plan`, `revisa` = `valida-el-project-plan`, y
 > `grill-me` es la dependencia externa (ver más abajo). Slugs completos en la tabla siguiente.
 
 Lo que mantiene unidas las dos superficies son **dos columnas compartidas** (ver más abajo): el
@@ -69,13 +69,13 @@ construye). Ambas viajan dentro de los documentos que la génesis genera, así q
 | **· bootstrap** | *(no es un skill)* `CLAUDE.md §6` | Claude Code | Lee los 5 docs y arranca el proyecto. | 5 docs → `PROJECT_PLAN.md` (Tier S) + scaffold del stack |
 | **diseño** | `grill-me` *(externo · Pocock)* | Claude Code | Interroga el diseño de una feature hasta resolver cada rama del árbol de decisión. | feature difusa → diseño cerrado |
 | **ubica** | `anade-esto-al-project-plan` | Claude Code | Coloca el trabajo ya diseñado en el plan (fase nueva o sub-fase), respetando el orden. | contexto de feature → entrada en `PROJECT_PLAN.md` |
-| **audita** | `revisa-el-project-plan` | Claude Code | Audita la salud del plan contra el Standard y lo sanea (con autorización). | plan → `AUDIT_PROJECT_PLAN.md` + reencauce |
+| **audita** | `valida-el-project-plan` | Claude Code | Audita la salud del plan contra el Standard y lo sanea (con autorización). | plan → `AUDIT_PROJECT_PLAN.md` + reencauce |
 | **visualiza** | `project-plan-gitgraph` | Claude Code | Convierte el plan en un diagrama Mermaid `gitGraph` con el **estado por color** (verde cerrado · rojo NEXT · naranja por hacer · gris descartado), validado con el parser real. | `PROJECT_PLAN.md` → `git-graph.mermaid` (solo el archivo; lo pegas en mermaid.live) |
 
 > **`project-plan-gitgraph` es la *vista* de la familia, no un paso del ciclo.** No edita el plan ni
 > impone doctrina: lo *lee* (o lo infiere del historial de git si no hay documento formal) y lo pinta
 > como un árbol estilo Git. Apoya las mismas convenciones del **Canon Plan Standard** (estados de fase,
-> hitos, eras) para que el mismo plan produzca siempre el mismo grafo. Útil tras `revisa-el-project-plan`
+> hitos, eras) para que el mismo plan produzca siempre el mismo grafo. Útil tras `valida-el-project-plan`
 > para ver de un vistazo el avance.
 
 > **`grill-me` vive en dos sitios (dual-place).** Su *patrón* —interrogar de forma incansable, rama a
@@ -99,10 +99,10 @@ La doctrina de qué es un `PROJECT_PLAN` de alto rendimiento: principio rector (
 **invariantes universales** vs **bindings de proyecto**, **tiers S/M/L** que escalan con el tamaño,
 plantilla de fase única, trazabilidad y gestión de memorias.
 
-→ Fuente: [`revisa-el-project-plan/references/canon-plan-standard.md`](revisa-el-project-plan/references/canon-plan-standard.md)
+→ Fuente: [`valida-el-project-plan/references/canon-plan-standard.md`](valida-el-project-plan/references/canon-plan-standard.md)
 
 Lo emite `entrevista-prd-a-proyecto` (como `CLAUDE.md §0`), lo conforma `anade-esto-al-project-plan` y
-lo hace cumplir `revisa-el-project-plan`. Su rasgo clave es la **adaptación al tamaño**: un proyecto
+lo hace cumplir `valida-el-project-plan`. Su rasgo clave es la **adaptación al tamaño**: un proyecto
 nuevo nace como un solo archivo (**Tier S**) y crece hacia el sistema en capas (índice + CHANGELOG +
 `archive/`, **Tier L**) solo cuando los gatillos de promoción lo piden. Nunca te preocupas por el
 tamaño del plan: el método te dice cuándo disgregarlo.
@@ -149,7 +149,7 @@ La génesis (`entrevista-prd-a-proyecto`) produce cinco documentos en dos capas.
    para tu OK, y luego hará el scaffold del stack (Fase 0/1).
 4. **Build loop.** A partir de ahí, el ciclo de cada feature: `grill-me` (cierra el diseño) →
    `anade-esto-al-project-plan` (lo ubica en el plan) → construir (gobernado por `CLAUDE.md §8`) → y,
-   cuando el plan crezca, `revisa-el-project-plan` para auditarlo y promocionarlo de tier.
+   cuando el plan crezca, `valida-el-project-plan` para auditarlo y promocionarlo de tier.
 
 ---
 
@@ -165,7 +165,7 @@ La familia se publica como un **plugin de Claude Code** (MIT, público), instala
 
 La extrapolabilidad no depende de que el otro conozca tu doctrina: `entrevista-prd-a-proyecto` la
 **inyecta** en el `CLAUDE.md` de su proyecto. A partir de ahí, su Claude Code construye con tu mismo
-criterio, y `anade-esto-al-project-plan` / `revisa-el-project-plan` mantienen su plan con tu mismo
+criterio, y `anade-esto-al-project-plan` / `valida-el-project-plan` mantienen su plan con tu mismo
 estándar — con *sus* convenciones de casa (bindings), no las tuyas impuestas.
 
 > **Nota sobre `grill-me`:** no se distribuye dentro del plugin (su patrón ya va integrado en la
@@ -188,13 +188,13 @@ produce los 5 documentos markdown que gobiernan un desarrollo full-stack en Clau
 
 > Consolidación bajo el Canon Plan Standard. Estado a 2026-06-07:
 
-- ✅ **Canon Plan Standard** redactado (la columna), bajo `revisa-el-project-plan/references/`.
+- ✅ **Canon Plan Standard** redactado (la columna), bajo `valida-el-project-plan/references/`.
 - ✅ Familia renombrada a slugs descriptivos y carpeta-método `metodo-canon/`.
 - ✅ Patrón grill-me integrado en la génesis (auto-resolución desde la KB · incansable · árbol 1-a-1
   con recomendación).
 - ✅ Etiqueta de familia `[Superficie · Método Canon]` al inicio de cada `description`.
 - ✅ Añadida la *vista* de la familia: `project-plan-gitgraph` (Claude Code · gitGraph del plan con estado por color).
-- ⏳ `revisa-el-project-plan` — `SKILL.md` auditor en construcción sobre el Standard.
+- ⏳ `valida-el-project-plan` — `SKILL.md` auditor en construcción sobre el Standard.
 - ⏳ Alineación al Standard de `anade-esto-al-project-plan` (plantilla única §6 + consciencia de tier)
   y de `generate-claude` (emitir el Standard como `CLAUDE.md §0` + crear el plan en Tier S).
 

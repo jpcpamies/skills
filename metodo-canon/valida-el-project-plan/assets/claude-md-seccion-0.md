@@ -1,7 +1,7 @@
 <!--
   Plantilla operativa del §0 — la copia del Canon Plan Standard que vive dentro del CLAUDE.md de un repo.
 
-  Qué es: la sección que `revisa-el-project-plan` PLANTA O REFRESCA al principio del `CLAUDE.md` del repo
+  Qué es: la sección que `valida-el-project-plan` PLANTA O REFRESCA al principio del `CLAUDE.md` del repo
   auditado, para que Claude Code sepa cómo leer, hacer crecer y mantener el plan (sin esto, el auditor monta
   la infraestructura pero nadie la mantiene → el plan se vuelve a desordenar).
 
@@ -33,7 +33,7 @@
 
 > Sección autocontenida y agnóstica del proyecto a propósito: es el estándar de cómo se lee, crece y se
 > mantiene el plan de **este** repo. Es la copia operativa del **Canon Plan Standard** (fuente canónica:
-> `metodo-canon/revisa-el-project-plan/references/canon-plan-standard.md`). Si esta copia y la canónica
+> `metodo-canon/valida-el-project-plan/references/canon-plan-standard.md`). Si esta copia y la canónica
 > divergen, **manda la canónica**.
 
 ### 0.A Tier y bindings de este repo (contra lo que mide el enforcer)
@@ -50,7 +50,7 @@
     docs/plan/backlog.md · .claude/memory/ · docs/decisions/}}`
 
 > Al promocionar de tier (§0.9) o cambiar un binding, **actualiza este bloque 0.A**: es la verdad que el
-> auditor `revisa-el-project-plan` lee para no imponer convenciones ajenas.
+> auditor `valida-el-project-plan` lee para no imponer convenciones ajenas.
 
 ### 0.0 Principio rector — "el plan es la masa"
 
@@ -160,5 +160,5 @@ Cuando salta un gatillo de promoción, la transición es atómica y deja el §0.
   cite.
 
 Tras cualquier transición: **re-medir** el estado vivo, correr el checklist (§0.8), **actualizar el bloque
-0.A** y no publicar solo si el repo separa el push del humano. El skill `revisa-el-project-plan` audita y, con
+0.A** y no publicar solo si el repo separa el push del humano. El skill `valida-el-project-plan` audita y, con
 tu OK, ejecuta esta transición y refresca este §0.

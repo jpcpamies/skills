@@ -1,6 +1,6 @@
 # Ejes de auditoría (A–K)
 
-> Catálogo de lo que `revisa-el-project-plan` comprueba. Cada eje cita su fuente en el **Canon Plan
+> Catálogo de lo que `valida-el-project-plan` comprueba. Cada eje cita su fuente en el **Canon Plan
 > Standard** (`canon-plan-standard.md`), se evalúa **relativo al tier** y se mide contra los **bindings
 > del repo auditado**, nunca contra los tuyos. Para cada eje: qué mide · cuándo es **defecto duro**
 > (invariante roto) · cuándo es **desajuste blando** (binding/tier distinto, no un fallo) · qué evidencia

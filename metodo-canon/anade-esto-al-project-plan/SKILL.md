@@ -28,8 +28,8 @@ Esta skill **NO modifica el PRD** ni `PRODUCT.md`, `DESIGN.md`, `CLAUDE.md` ni `
 > **tier** vigente del plan (§4): en **Tier S** (un solo archivo) la entrada va inline; desde **Tier M/L**
 > una fase *futura* entra como **one-liner en la cola** (su detalle vive en `backlog.md`) y nunca infla el
 > índice por encima de su presupuesto. Si al ubicar el trabajo detectas que el plan se ha pasado de tier,
-> **no lo reorganices aquí**: eso es trabajo de `revisa-el-project-plan`. Doctrina:
-> [`../revisa-el-project-plan/references/canon-plan-standard.md`](../revisa-el-project-plan/references/canon-plan-standard.md).
+> **no lo reorganices aquí**: eso es trabajo de `valida-el-project-plan`. Doctrina:
+> [`../valida-el-project-plan/references/canon-plan-standard.md`](../valida-el-project-plan/references/canon-plan-standard.md).
 
 ## Proceso
 

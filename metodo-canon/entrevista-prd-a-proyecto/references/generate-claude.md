@@ -16,13 +16,13 @@ el `PROJECT_PLAN`: "el plan es la masa", invariantes I1–I7, bindings del repo,
 única §6, trazabilidad y memorias.
 
 **Plantilla operativa compartida (úsala literal):** copia
-`revisa-el-project-plan/assets/claude-md-seccion-0.md` (misma familia `metodo-canon`) como §0, rellenando su
+`valida-el-project-plan/assets/claude-md-seccion-0.md` (misma familia `metodo-canon`) como §0, rellenando su
 bloque **0.A** con Tier S y los bindings por defecto del método (B1 `✅/⏳/📌`, B2 `Fase X.Y`, B3 `tipo(X.Y): …`,
 B4 VALIDATE humano, B5 ~200/~2000, B6 las rutas estándar). Es el **mismo** §0 que el auditor
-`revisa-el-project-plan` planta o refresca después, así no divergen. Doctrina canónica detrás:
-`revisa-el-project-plan/references/canon-plan-standard.md`; si la copia operativa y la canónica divergen,
+`valida-el-project-plan` planta o refresca después, así no divergen. Doctrina canónica detrás:
+`valida-el-project-plan/references/canon-plan-standard.md`; si la copia operativa y la canónica divergen,
 **manda la canónica**. **Sin este §0**, un plan recién creado no conoce su propio estándar de calidad y
-suspendería su propia auditoría con `revisa-el-project-plan` (eje K).
+suspendería su propia auditoría con `valida-el-project-plan` (eje K).
 
 ## Plantilla (rellena los [slots] desde el PRD/DESIGN)
 
@@ -31,9 +31,9 @@ suspendería su propia auditoría con `revisa-el-project-plan` (eje K).
 > Guía unificada: stack, convenciones, ciclo de desarrollo y reglas de IA. Método Canon.
 
 ## 0. Gestión del PROJECT_PLAN — LEER PRIMERO (canónico, extraíble)
-[Pega aquí, literal, la plantilla operativa `revisa-el-project-plan/assets/claude-md-seccion-0.md` (familia
+[Pega aquí, literal, la plantilla operativa `valida-el-project-plan/assets/claude-md-seccion-0.md` (familia
 metodo-canon), con su bloque 0.A instanciado a Tier S y los bindings por defecto del método. Es el mismo §0
-que el auditor `revisa-el-project-plan` planta/refresca; no lo reescribas a mano. Gobierna cómo se crea,
+que el auditor `valida-el-project-plan` planta/refresca; no lo reescribas a mano. Gobierna cómo se crea,
 mantiene y audita el plan: "el plan es la masa", invariantes I1–I7, bindings del repo, tiers S/M/L, plantilla
 de fase única §6, trazabilidad y memorias. Doctrina canónica: `canon-plan-standard.md`; si divergen, manda la
 canónica.]

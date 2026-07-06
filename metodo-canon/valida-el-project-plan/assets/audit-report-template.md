@@ -1,6 +1,6 @@
 # AUDIT_PROJECT_PLAN — {{NOMBRE_DEL_REPO}}
 
-> Informe generado por `revisa-el-project-plan` (Método Canon) contra el Canon Plan Standard.
+> Informe generado por `valida-el-project-plan` (Método Canon) contra el Canon Plan Standard.
 > Fecha: {{FECHA}} · Plan auditado: `{{RUTA_DEL_PLAN}}` · **Modo: read-only** (este informe no modifica
 > el plan; el reencauce solo se ejecuta con autorización explícita).
 

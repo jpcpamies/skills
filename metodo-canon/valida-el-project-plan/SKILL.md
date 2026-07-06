@@ -1,5 +1,5 @@
 ---
-name: revisa-el-project-plan
+name: valida-el-project-plan
 description: >
   [Claude Code · Método Canon] Audita la salud de un `PROJECT_PLAN.md` contra el Canon Plan Standard y,
   con tu OK, lo sanea. Para Claude Code, en el repo del proyecto. Localiza el plan, clasifica su tier
@@ -9,18 +9,18 @@ description: >
   `AUDIT_PROJECT_PLAN.md`. Read-only por defecto: el reencauce (disgregar, archivar, promocionar de tier, y
   plantar/refrescar el `CLAUDE.md §0` que hace que Claude Code mantenga la metodología) solo tras tu
   autorización. Úsalo cuando
-  el usuario diga "revisa el project plan", "audita el plan", "¿está sano el plan?", "el plan se ha
-  desordenado" o tras cerrar varias fases. Es el auditor del Método Canon, tras la génesis y
-  anade-esto-al-project-plan.
+  el usuario diga "valida el project plan", "revisa el project plan", "audita el plan", "¿está sano el
+  plan?", "el plan se ha desordenado" o tras cerrar varias fases. Es el auditor del Método Canon, tras la
+  génesis y anade-esto-al-project-plan.
 license: MIT
 metadata:
   author: Jordi Pàmies
   surface: Claude Code
 ---
 
-# Revisa el Project Plan — el auditor del Método Canon
+# Valida el Project Plan — el auditor del Método Canon
 
-`revisa-el-project-plan` es el **enforcer** de la familia: hace cumplir el **Canon Plan Standard** sobre
+`valida-el-project-plan` es el **enforcer** de la familia: hace cumplir el **Canon Plan Standard** sobre
 el `PROJECT_PLAN` real de un repo. No diseña ni ubica trabajo (eso son `grill-me` y
 `anade-esto-al-project-plan`): **mide la salud del plan, la reporta, y solo sanea con tu permiso.**
 
